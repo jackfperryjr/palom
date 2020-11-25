@@ -152,7 +152,7 @@ const RoomControls: React.SFC<Props> = ({
         {currentPassword && <span>Room locked: {currentPassword}</span>}
         {!currentPassword && <span>Room unlocked!</span>}
       </LockedLabel>
-      <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/'}>
+      <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/penelo'}>
         <LeaveButton>
           <CallEndIcon fill="#505658" />
           <span>Leave</span>
