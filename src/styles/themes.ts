@@ -47,13 +47,13 @@ const lightBase: BaseTheme = {
   background: colors.ghostWhite,
   foreground: colors.grayDark,
   border: colors.gray,
-  primaryBackground: colors.midnightGreenEagleGreen,
+  primaryBackground: colors.lightSeaGreen,
   primaryForeground: colors.ghostWhite,
-  secondaryBackground: colors.illuminatingEmerald,
-  secondaryForeground: colors.teaGreen,
-  attentionBackground: colors.maximumRedPurple,
+  secondaryBackground: colors.atomicTangerine,
+  secondaryForeground: colors.bittersweet,
+  attentionBackground: colors.fireOpal,
   attentionForeground: colors.ghostWhite,
-  actionBackground: colors.grannySmithApple,
+  actionBackground: colors.coral,
   actionForeground: colors.grayLight
 };
 

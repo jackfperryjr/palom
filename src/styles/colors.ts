@@ -44,13 +44,13 @@ const colors = {
   orangeLighter: colorFromHsl(34, 98 / 100, 92 / 100),
 
 
-  ghostWhite: colorFromHex('#ffffff'),
-  midnightGreenEagleGreen: colorFromHex('#01BAEF'),
-  illuminatingEmerald: colorFromHex('#1a936f'),
-  grannySmithApple: colorFromHex('#88d498'),
-  teaGreen: colorFromHex('#c6dabf'),
+  ghostWhite: colorFromHex('#ffffff'), //ghostWhite
 
-  maximumRedPurple: colorFromHex('#88d498')
+  lightSeaGreen: colorFromHex('#00A6A6'), 
+  atomicTangerine: colorFromHex('#F79D65'), 
+  coral: colorFromHex('#F4845F'), 
+  bittersweet: colorFromHex('#F27059'), 
+  fireOpal: colorFromHex('#F25C54') 
 };
 
 export default colors;

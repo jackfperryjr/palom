@@ -51,7 +51,7 @@ const Header = styled.div({
   textAlign: 'center',
   fontSize: '30px',
   fontWeight: 'bolder',
-  color: '#1a936f'
+  color: '#00A6A6'
 });
 
 const Controls = styled.div`

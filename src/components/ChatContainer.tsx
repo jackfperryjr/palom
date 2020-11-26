@@ -65,9 +65,10 @@ const Header = styled.button`
   padding: 5px 15px;
   font-size: 18px;
   outline: none;
+  color: #ffffff;
   background-color: transparent;
   svg {
-    fill: ${({ theme }) => colorToString(theme.foreground)};
+    fill: ${({ theme }) => colorToString(theme.background)};
     vertical-align: middle;
     font-size: 20px;
     margin-right: 5px;
@@ -124,8 +125,8 @@ const StyledStayDownContainer = styled(StayDownContainer)`
 
 const InputContainer = styled.div`
   padding: 5px;
-  border: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
-  color: ${({ theme }) => colorToString(theme.secondaryForeground)};
+  border: ${({ theme }) => css`1px solid ${colorToString(theme.background)}`};
+  color: ${({ theme }) => colorToString(theme.background)};
   border-radius: 5px;
   margin: 5px;
 
@@ -142,7 +143,7 @@ const InputContainer = styled.div`
     resize: none;
     border: none;
     background-color: transparent;
-    color: ${({ theme }) => colorToString(theme.secondaryForeground)};
+    color: ${({ theme }) => colorToString(theme.background)};
   }
   input {
     margin-right: 5px;
@@ -167,7 +168,6 @@ const InputContainer = styled.div`
 `;
 
 const Message = styled.div`
-  border-bottom: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
   position: relative;
   padding: 10px;
   font-size: 14px;
@@ -177,18 +177,19 @@ const Message = styled.div`
 `;
 
 const MessageAuthor = styled.p({
-  fontWeight: 'bold'
+  fontWeight: 'bolder'
 });
 
 const MessageTime = styled.span`
   position: absolute;
   top: 10px;
   right: 10px;
-  color: ${({ theme }) => colorToString(theme.secondaryForeground)};
+  color: ${({ theme }) => colorToString(theme.background)};
   font-size: 12px;
 `;
 
 const MessageText = styled.p({
+  color: '#ffffff',
   wordBreak: 'break-all'
 });
 
@@ -199,7 +200,7 @@ interface ChatMessageGroupProps {
 
 const ChatMessageGroup: React.SFC<ChatMessageGroupProps> = ({ chats, peer }) => (
   <Message className="msg" key={chats[0].id}>
-    <MessageAuthor style={ chats[0].displayName === localStorage.displayName ? {color:'#01BAEF'} : {color : '#c6dabf'} }>{chats[0].displayName ? chats[0].displayName : 'Anonymous'}</MessageAuthor>
+    <MessageAuthor style={ chats[0].displayName === localStorage.displayName ? {color:'#00A6A6'} : {color : '#F4845F'} }>{chats[0].displayName ? chats[0].displayName : 'Anonymous'}</MessageAuthor>
     <MessageTime>{chats[0].time.toLocaleTimeString()}</MessageTime>
     {chats.map(message => (
       <MessageText key={message.id}>
@@ -268,7 +269,7 @@ const ChatContainer: React.SFC<Props> = ({ roomAddress, toggleChat, disabled }) 
     <Header onClick={toggleChat}>
       <KeyboardArrowDownIcon />
       <ChatIcon />
-      <span>Chat</span>
+      <span>Close</span>
     </Header>
   </Container>
 );
