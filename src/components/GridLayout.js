@@ -42,7 +42,7 @@ function CellContainer(props) {
     return (React.createElement("div", { style: {
             display: 'flex',
             gridArea: getGridArea(props.index),
-            overflow: 'hidden'
+            overflow: 'visible'
         } }, props.content));
 }
 function GridContainer(props) {

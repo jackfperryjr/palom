@@ -48,6 +48,9 @@ const MuteButton = styled(Button)<MutePauseButtonProps>`
         `
       : ''}
   }
+  ${mq.MOBILE} {
+    width: 50%;
+  }
 `;
 
 const PauseButton = styled(Button)<MutePauseButtonProps>`
@@ -60,6 +63,9 @@ const PauseButton = styled(Button)<MutePauseButtonProps>`
   }
   :active {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
+  }
+  ${mq.MOBILE} {
+    width: 50%;
   }
 `;
 

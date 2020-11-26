@@ -8,12 +8,12 @@ import PeerGridItem from './PeerGridItem';
 
 const StyledGridLayout = styled(GridLayout)({
   flex: 1,
-  backgroundColor: '#262a2c',
-  maxHeight: 'calc(var(--vh, 1vh) * 100)',
+  backgroundColor: '#000000',
+  maxHeight: '100%',
   '& video': {
     width: '100%',
     height: '100%',
-    objectFit: 'contain'
+    objectFit: 'cover'
   },
   '& > div': {
     position: 'relative'

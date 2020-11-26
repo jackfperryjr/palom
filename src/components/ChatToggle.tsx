@@ -30,18 +30,18 @@ const Container = styled.button<ContainerProps>`
   border: ${({ newMessage, theme }) =>
     newMessage
       ? css`1px ${colorToString(theme.buttonAttentionBackground)} solid`
-      : css`1px solid ${colorToString(theme.border)}`};
+      : css`1px solid #ffffff`};
   background: ${({ newMessage, theme }) =>
     newMessage ? colorToString(theme.buttonAttentionBackground) : 'transparent'};
   color: ${({ newMessage, theme }) =>
-    newMessage ? colorToString(theme.buttonAttentionText) : colorToString(theme.border)};
+    newMessage ? colorToString(theme.buttonAttentionText) : "#ffffff"};
   padding: 5px 15px;
   :focus {
     outline: 0;
   }
   svg {
     fill: ${({ newMessage, theme }) =>
-      newMessage ? colorToString(theme.buttonActionText) : colorToString(theme.foreground)};
+      newMessage ? colorToString(theme.buttonActionText) : '#ffffff'};
     vertical-align: middle;
     font-size: 20px;
     margin-right: 5px;

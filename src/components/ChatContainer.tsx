@@ -31,10 +31,10 @@ const Container = styled.div`
   & .msg:last-of-type {
     border-bottom: none;
   }
+  min-height: 100vh;
+  max-height: 100vh;
 
   ${mq.SMALL_DESKTOP} {
-    min-height: 100vh;
-    max-height: 100vh;
     width: 20%;
     border-top: none;
     border-left: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
@@ -44,8 +44,6 @@ const Container = styled.div`
     background: transparent;
   }
   ${mq.MOBILE} {
-    min-height: 80vh;
-    max-height: 80vh;
     width: 100%;
     padding-bottom: 20px;
     bottom: 0;

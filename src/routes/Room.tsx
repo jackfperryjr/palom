@@ -43,6 +43,8 @@ const Container = styled.div({
   display: 'flex',
   position: 'relative',
   flexDirection: 'column',
+  backgroundColor: '#000000',
+  height: '100%',
   [mq.SMALL_DESKTOP]: {
     flexDirection: 'row'
   }

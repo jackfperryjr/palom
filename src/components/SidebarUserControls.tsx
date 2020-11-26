@@ -44,7 +44,7 @@ const RoomModeToggles = styled.div({
 const EmptyVideo = styled.div({
   width: '100%',
   height: '133px',
-  backgroundColor: '#262a2c',
+  backgroundColor: '#000',
   marginBottom: '10px'
 });
 

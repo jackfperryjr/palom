@@ -15,15 +15,15 @@ const Container = styled.div({
   '& video': {
     width: '100%',
     height: '100%',
-    objectFit: 'contain',
-    backgroundColor: '#262a2c'
+    objectFit: 'cover',
+    backgroundColor: '#000000'
   }
 });
 
 const BlankVideo = styled.div({
   width: '100%',
   height: '100%',
-  backgroundColor: '#262a2c',
+  backgroundColor: '#000000',
   color: '#e9ecec',
   display: 'flex',
   alignItems: 'center',
