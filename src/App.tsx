@@ -44,6 +44,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.5;
     color: #4d5659;
+    background-color: transparent;
   }
 
   a {

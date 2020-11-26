@@ -13,13 +13,15 @@ const Container = styled.div`
   background-color: transparent;
   ${mq.MOBILE} {
     z-index: 200;
-    bottom: 20px;
+    bottom: 70px;
     width: 185px;
+    right: 0;
   }
   ${mq.SMALL_DESKTOP} {
     top: 30px;
     width: 220px;
     z-index: 200;
+    left: 0;
   }
 `;
 

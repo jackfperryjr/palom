@@ -19,7 +19,7 @@ import emojify from '../utils/emojify';
 import Linkify from './Linkify';
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -44,9 +44,10 @@ const Container = styled.div`
     background: transparent;
   }
   ${mq.MOBILE} {
-    min-height: 70vh;
-    max-height: 70vh;
+    min-height: 80vh;
+    max-height: 80vh;
     width: 100%;
+    padding-bottom: 20px;
     bottom: 0;
   }
 `;

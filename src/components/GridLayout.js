@@ -48,13 +48,10 @@ function CellContainer(props) {
 function GridContainer(props) {
     let viewport = window.innerWidth;
 
-    if (viewport <= 849) {
+    if (viewport <= 449) {
         return (React.createElement("div", { id: props.id, className: props.className, style: {
             display: 'block!important',
-            overflow: 'scroll',
-            gridTemplateAreas: getGridTemplateAreas(props.itemCount),
-            gridTemplateColumns: `repeat(${getGridTemplateColumns(props.itemCount)}, 1fr)`,
-            gridTemplateRows: `repeat(${getGridTemplateRows(props.itemCount)}, 1fr)`
+            overflow: 'scroll'
         } }, props.content));
     } else {
         return (React.createElement("div", { id: props.id, className: props.className, style: {

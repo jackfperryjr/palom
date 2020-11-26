@@ -19,7 +19,7 @@ interface ContainerProps {
 }
 
 const Container = styled.button<ContainerProps>`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   width: 20%;
@@ -53,6 +53,7 @@ const Container = styled.button<ContainerProps>`
     }
   }
   ${mq.MOBILE} {
+    padding-bottom: 20px;
     width: 100%;
   }
 `;

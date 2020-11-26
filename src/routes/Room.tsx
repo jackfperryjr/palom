@@ -57,8 +57,7 @@ const LoadingState = styled.div({
 });
 
 const SidebarToggleButton = styled(Button)`
-  position: absolute;
-  left: -22px;
+  position: fixed;
   border-radius: 50%;
   min-width: 50px;
   min-height: 50px;
@@ -71,10 +70,12 @@ const SidebarToggleButton = styled(Button)`
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
   ${mq.MOBILE} {
-    bottom: 10%;
+    bottom: 90px;
+    right: -22px;
   }
   ${mq.SMALL_DESKTOP} {
     top: 10%;
+    left: -22px;
   }
   z-index: 300;
 `;

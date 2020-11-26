@@ -48,6 +48,7 @@ const Container = styled.div({
 const Header = styled.div({
   gridArea: 'header',
   marginTop: '50px',
+  marginBottom: '-30px',
   textAlign: 'center',
   fontSize: '30px',
   fontWeight: 'bolder',
@@ -129,6 +130,9 @@ const AcceptButton = styled(Button)`
   :disabled {
     background-color: ${({ theme }) => colorToString(theme.buttonSecondaryBackground)};
   }
+  ${mq.MOBILE} {
+    margin-bottom: 20px;
+  }
 `;
 
 const TestOutputButton = styled.span`
@@ -204,8 +208,9 @@ class Haircheck extends React.Component<HaircheckProps, HaircheckState> {
 
           return (
             <>
-            <Header>Ready to join?</Header>
-            <span style={{ textAlign: 'center'}}>{window.location.href}</span>
+            <Header>Ready to join?             
+              <p style={{ textAlign: 'center', fontSize: '14px', color: '#000000', fontWeight: 'normal'}}>{window.location.href}</p>
+            </Header>
             <Container>
               <Placeholders.Consumer>
                 {({ haircheckHeaderPlaceholder }) => (
