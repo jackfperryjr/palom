@@ -9,6 +9,7 @@ import PeerGridItem from './PeerGridItem';
 const StyledGridLayout = styled(GridLayout)({
   flex: 1,
   backgroundColor: '#000000',
+  minHeight: '100%',
   maxHeight: '100%',
   '& video': {
     width: '100%',

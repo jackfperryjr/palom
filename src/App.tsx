@@ -5,16 +5,20 @@ import Placeholders from './contexts/Placeholders';
 import Room from './routes/Room';
 import { PlaceholderGenerator } from './types';
 import { colorToString, darken } from './utils/colorify';
+import mq from './styles/media-queries';
 
 const Container = styled.div`
   width: 100%;
-  background-color: ${({ theme }) => colorToString(theme.background)};
+  background-color: #ffffff;
   color: ${({ theme }) => colorToString(theme.foreground)};
   a {
     color: ${({ theme }) => colorToString(theme.primaryBackground)};
     :hover {
       color: ${({ theme }) => colorToString(darken(theme.primaryBackground, 0.9))};
     }
+  }
+  ${mq.MOBILE} {
+    height: 100vh;
   }
 `;
 

@@ -16,12 +16,12 @@ const ScreenShareButton = styled(Button)`
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
   ${mq.MOBILE} {
-    display: none;
+    display: none!important;
   }
 `;
 
 const EmptySpacer = styled.span({
-  width: '120px'
+  width: '0px'
 });
 
 // ScreenshareControls displays a button that activates the screenshare flow.

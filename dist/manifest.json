@@ -4,7 +4,7 @@
     "description": "Welcome to Penelo! Penelo is a simple, easy to use, free video chat app. Penelo is built using React.js and incorporates PWA technologies! Try it out!",
     "start_url": "./",
     "scope": ".",
-    "display": "standalone",
+    "display": "fullscreen",
     "orientation": "portrait",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",

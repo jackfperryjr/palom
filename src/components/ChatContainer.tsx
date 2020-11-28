@@ -20,6 +20,7 @@ import Linkify from './Linkify';
 
 const Container = styled.div`
   position: fixed;
+  padding-top: 25px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -34,20 +35,20 @@ const Container = styled.div`
   min-height: 100vh;
   max-height: 100vh;
 
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
   ${mq.SMALL_DESKTOP} {
     width: 20%;
     border-top: none;
     border-left: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
   }
-  ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-  }
   ${mq.MOBILE} {
     border: none;
     width: 100%;
     padding-bottom: 20px;
-    bottom: 0;
   }
 `;
 
