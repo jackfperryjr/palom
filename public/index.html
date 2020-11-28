@@ -37,6 +37,7 @@
     -->
     <link rel="manifest" href="https://jackfperryjr.github.io/penelo/manifest.json" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
     <title>penelo</title>
     <style>
       body {
@@ -160,7 +161,7 @@
       }
 
       .create-room-form-input-wrapper {
-        border: 1px #3f3f3f solid;
+        border: 1px #bdbdbd solid;
         padding: 10px;
         border-radius: 50px;
       }
@@ -195,12 +196,41 @@
         background-color: #F25C54;
       }
 
-      @media (max-width: 420px) {
-        .haircheck-header-greeting {
+      .pwa {
+        position: fixed;
+        bottom: 20px;
+        left: 48%;
         text-align: center;
-        margin-top: 20px;
-        color: #1a936f;
       }
+
+      pwa-install::part(openButton) {
+        background-color: #00A6A6;
+        border-radius: 5px;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 16px;
+      }
+
+      pwa-install::part(installModal) {
+        background-color: #00A6A6;
+      }
+
+      pwa-install::part(installButton) {
+        background-color: #F25C54!important;
+      }
+
+      @media (max-width: 420px) {
+        .pwa {
+        position: fixed;
+        bottom: 20px;
+        left: 42%;
+        text-align: center;
+      }
+        .haircheck-header-greeting {
+          text-align: center;
+          margin-top: 20px;
+          color: #1a936f;
+        }
 
         .create-room-form-input-wrapper {
           width: 100%;
@@ -249,7 +279,7 @@
             <input
               type="text"
               name="room"
-              placeholder="Choose a room name"
+              placeholder="Enter a room name"
               class="create-room-form-input"/>
           </span>
           <button
@@ -259,7 +289,20 @@
           </button>
         </form>
         <div class="container">
-          <p style="color: #bdbdbd;">Enter a name for your room and click Go! It's that simple. No signups necessary. Once created you can simply share your link with friends and family. Try it out!</p>
+          <p style="color: #bdbdbd; text-align: center; margin: 0 auto;">Create a room or enter a friend's and click Go! It's that simple. No signups necessary. Once in you can simply share your link with friends and family. Try it out!</p>
+          <div class="pwa">
+            <script async defer>
+              var installComponent = document.createElement("pwa-install");
+              document.querySelector('.pwa').appendChild(installComponent);
+              //installComponent.getInstalledStatus();
+            </script>
+            <script type="module">
+              import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+  
+              const el = document.createElement('pwa-update');
+              document.body.appendChild(el);
+            </script>
+          </div>
         </div>
       </div>
     </template>

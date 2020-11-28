@@ -15,6 +15,9 @@ const ScreenShareButton = styled(Button)`
   :active {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
+  ${mq.MOBILE} {
+    display: none;
+  }
 `;
 
 const EmptySpacer = styled.span({

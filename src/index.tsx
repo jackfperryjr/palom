@@ -8,7 +8,6 @@ import App from './App';
 import { PlaceholderGenerator } from './types';
 import getConfigFromMetaTag from './utils/metaConfig';
 import randomRoomName from './utils/randomRoomName';
-import * as serviceWorker from './serviceWorker';
 
 const configUrl = getConfigFromMetaTag('config-url');
 const CONFIG_URL = configUrl ? configUrl : '';
@@ -110,11 +109,6 @@ const run = ({
     root
   );
 };
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.register()
 
 const loadTemplate = (id: string): DocumentFragment | null => {
   const el = document.getElementById(id);

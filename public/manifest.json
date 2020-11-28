@@ -1,11 +1,27 @@
 {
     "short_name": "Penelo",
     "name": "Penelo",
+    "description": "Welcome to Penelo! Penelo is a simple, easy to use, free video chat app. Penelo is built using React.js and incorporates PWA technologies! Try it out!",
     "icons": [
       {
+        "src": "logo256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      },
+      {
         "src": "favicon.ico",
-        "sizes": "64x64 32x32 24x24 16x16",
+        "sizes": "48x48",
         "type": "image/x-icon"
+      },
+      {
+        "src": "favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
       },
       {
         "src": "logo192.png",
@@ -18,8 +34,38 @@
         "sizes": "512x512"
       }
     ],
+    "screenshots": [
+      {
+        "src": "screen1.png"
+      },
+      {
+        "src": "screen2.png"
+      },
+      {
+        "src": "screen3.png"
+      },
+      {
+        "src": "screen4.jpg"
+      },
+      {
+        "src": "screen5.jpg"
+      },
+      {
+        "src": "screen6.jpg"
+      }
+    ],
+    "features": [
+      "Cross platform",
+      "Easy to use",
+      "No signups",
+      "Free"
+    ],
+    "categories": [
+      "utility"
+    ],
     "start_url": "./",
-    "display": "fullscreen",
+    "scope": ".",
+    "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#ffffff",
     "background_color": "#ffffff"

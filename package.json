@@ -10,6 +10,7 @@
   ],
   "dependencies": {
     "@andyet/simplewebrtc": "^1.26.0",
+    "@pwabuilder/pwainstall": "^1.6.7",
     "@types/jest": "^24.9.1",
     "@types/lodash-es": "^4.17.2",
     "@types/react": "^16.9.35",

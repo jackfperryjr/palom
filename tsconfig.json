@@ -15,7 +15,7 @@
     "jsx": "react",
     "lib": ["es2018", "dom"]
   },
-  "include": ["src"],
+  "include": ["src", "public/pwabuilder-sw-register.js"],
   "awesomeTypescriptLoaderOptions": {
     "useCache": true
   }

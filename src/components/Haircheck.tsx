@@ -35,7 +35,7 @@ const Container = styled.div({
     'preview'
     'controls'
   `,
-  gridRowGap: '10px',
+  gridRowGap: '0',
   gridColumnGap: '10px',
   [mq.SMALL_DESKTOP]: {
     gridTemplateAreas: `
@@ -47,7 +47,7 @@ const Container = styled.div({
 
 const Header = styled.div({
   gridArea: 'header',
-  marginTop: '50px',
+  marginTop: '25px',
   marginBottom: '-30px',
   textAlign: 'center',
   fontSize: '30px',

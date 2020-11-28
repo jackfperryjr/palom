@@ -44,6 +44,7 @@ const Container = styled.div`
     background: transparent;
   }
   ${mq.MOBILE} {
+    border: none;
     width: 100%;
     padding-bottom: 20px;
     bottom: 0;
@@ -121,6 +122,13 @@ const StyledStayDownContainer = styled(StayDownContainer)`
     background: transparent;
   }
 `;
+
+const ChatContainerHeader = styled.div`
+  border-bottom: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+`
 
 const InputContainer = styled.div`
   padding: 5px;
@@ -227,6 +235,7 @@ interface Props {
 // text element that displays currently typing peers.
 const ChatContainer: React.SFC<Props> = ({ roomAddress, toggleChat, disabled }) => (
   <Container>
+    <ChatContainerHeader>Chat</ChatContainerHeader>
     <StyledStayDownContainer>
       <ChatList
         room={roomAddress}
