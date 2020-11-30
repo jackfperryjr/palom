@@ -13,7 +13,7 @@
         "name": "Home",
         "short_name": "Home",
         "description": "Home",
-        "url": "/index.html",
+        "url": "https://jackfperryjr.github.io/penelo",
         "icons": [
           { 
             "src": "logo192.png",
