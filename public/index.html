@@ -162,7 +162,10 @@
       }
     
       .create-room-form {
-        text-align: center;
+        text-align: right;
+        float: right;
+        width: 30%;
+        margin-right: 10px;
       }
 
       .create-room-form-input-wrapper {
@@ -204,7 +207,7 @@
       .pwa {
         position: fixed;
         bottom: 20px;
-        left: 48%;
+        right: 25%;
         text-align: center;
       }
 
@@ -224,32 +227,87 @@
         background-color: #F25C54!important;
       }
 
-      @media (max-width: 420px) {
-        .pwa {
-        position: fixed;
-        bottom: 20px;
-        left: 42%;
+      .homepage-header {
+        margin: 0 auto; 
+        /* padding-top: 20px;  */
         text-align: center;
+        position: fixed;
+        top: 20px;
+        width: 100%;
       }
+
+      .homepage-header > img {
+        width: 30px;
+        height: auto;
+        border-radius: 5px;
+        float: left;
+        margin-left: 10px;
+      }
+
+      .homepage-header > span {
+        float: left;
+        color: #00A6A6;
+        font-size: 2em;
+        line-height: 30px;
+        margin-left: 10px;
+        font-weight: normal;
+      }
+
+      @media (max-width: 420px) {
+        .homepage-header > img {
+          width: 25px;
+          height: auto;
+          border-radius: 5px;
+          float: left;
+          margin-left: 10px;
+          margin-top: 5px;
+        }
+
+        .homepage-header > span {
+          float: left;
+          color: #00A6A6;
+          font-size: 20px;
+          line-height: 25px;
+          margin-left: 10px;
+          font-weight: normal;
+          padding-top: 5px;
+        }
+
+        .pwa {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          text-align: center;
+        }
+
         .haircheck-header-greeting {
           text-align: center;
           margin-top: 20px;
           color: #1a936f;
         }
 
+        .create-room-form {
+          text-align: right;
+          float: right;
+          width: 60%;
+          margin-right: 10px;
+        }
+
         .create-room-form-input-wrapper {
-          width: 100%;
-          display: block;
+          width: 80%;
+          display: inline-block;
           text-align: left;
+          padding: 5px;
         }
+
         .create-room-form-button {
-          width: 100%;
-          margin-top: 20px;
-          display: block;
+          display: inline-block;
           margin-left: 0px;
+          padding: 4px 6px!important;
         }
+
         .create-room-form-input {
-          width: 75%;
+          width: 100%;
         }
       }
 
@@ -261,7 +319,7 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="getPenelo()">
     <div id="root"></div>
     <template id="haircheck-header">
     </template>
@@ -274,11 +332,9 @@
       <div></div>
     </template>
     <template id="homepage">
-      <div style="margin: 0 auto; padding-top: 50px; text-align: center;">
-        <img src="https://jackfperryjr.github.io/penelo/logo512.png" style="width: 100px;border-radius: 5px;" alt="Penelo logo"/>
-      </div>
-      <h1 style="text-align: center;color: #00A6A6;">penelo</h1>
-      <div class="container">
+      <div class="homepage-header">
+        <img src="https://jackfperryjr.github.io/penelo/logo64.png" width="30" height="30" alt="Penelo logo"/>
+        <span>penelo</span>
         <form class="create-room-form" method="GET" action="/penelo">
           <span class="create-room-form-input-wrapper">
             <input
@@ -293,21 +349,24 @@
             Go!
           </button>
         </form>
+      </div>
+      <div class="container">
         <div class="container">
           <p style="color: #bdbdbd; text-align: center; margin: 0 auto;">Create a room or enter a friend's and click Go! It's that easy. No signups necessary. Once in you can simply share your link with friends and family. Try it out!</p>
-          <div class="pwa">
-            <script async defer>
-              var installComponent = document.createElement("pwa-install");
-              document.querySelector('.pwa').appendChild(installComponent);
-              //installComponent.getInstalledStatus();
-            </script>
-            <script type="module">
-              import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-  
-              const el = document.createElement('pwa-update');
-              document.body.appendChild(el);
-            </script>
-          </div>
+
+        </div>
+        <div class="pwa">
+          <script async defer>
+            var installComponent = document.createElement("pwa-install");
+            document.querySelector('.pwa').appendChild(installComponent);
+            //installComponent.getInstalledStatus();
+          </script>
+          <script type="module">
+            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+            const el = document.createElement('pwa-update');
+            document.body.appendChild(el);
+          </script>
         </div>
       </div>
     </template>
@@ -322,6 +381,15 @@
         emptyRosterPlaceholder: () => SimpleWebRTC.loadTemplate('empty-roster'),
         homepagePlaceholder: () => SimpleWebRTC.loadTemplate('homepage')
       });
+
+      function getPenelo() {
+        fetch('https://chocoboapi.azurewebsites.net/v1/account/penelo', {
+        method: 'get'
+        }).then(response => response.json())
+          .then(function(response) {
+          console.log(response)
+        })
+      }
     </script>
   </body>
 </html>

@@ -52,7 +52,10 @@ const Header = styled.div({
   textAlign: 'center',
   fontSize: '30px',
   fontWeight: 'bolder',
-  color: '#00A6A6'
+  color: '#00A6A6',
+  [mq.MOBILE]: {
+    fontSize: '22px'
+  }
 });
 
 const Controls = styled.div`

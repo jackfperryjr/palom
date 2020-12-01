@@ -4,13 +4,16 @@ import styled from 'styled-components';
 import mq from '../styles/media-queries';
 
 const Container = styled.div({
-  height: '375px',
   position: 'relative',
   width: '100%',
   padding: '0 10px',
   [mq.SMALL_DESKTOP]: {
     padding: '0',
-    width: '500px'
+    width: '500px',
+    height: '375px',
+  },
+  [mq.MOBILE]: {
+    height: '325px',
   },
   '& video': {
     width: '100%',

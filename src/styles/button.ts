@@ -14,9 +14,6 @@ const Button = styled.button`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.buttonSecondaryBackgroundHover)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.buttonSecondaryBackgroundActive)};
-  }
   :focus {
     outline: 0;
   }

@@ -17,9 +17,6 @@ const LockButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
 `;
 
 const HideButton = styled(Button)`
@@ -27,17 +24,11 @@ const HideButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
 `;
 
 const LeaveButton = styled(Button)`
   width: 100%;
   :hover {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
-  :active {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
 `;
@@ -131,7 +122,19 @@ const RoomControls: React.SFC<Props> = ({
                 setPassword('');
               }
             : () => {
-                const code = `${Math.floor(Math.random() * 10000)}`;
+                  function keyGen() {
+                    var i, key = "", characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+                
+                    var charactersLength = characters.length;
+                
+                    for (i = 0; i < 8; i++) {
+                        key += characters.substr(Math.floor((Math.random() * charactersLength) + 1), 1);
+                    }
+                
+                    return key;
+                }
+                // const code = `${Math.floor(Math.random() * 10000)}`;
+                const code = keyGen();
                 setPassword(code);
               }
         }

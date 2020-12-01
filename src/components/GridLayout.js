@@ -48,7 +48,7 @@ function CellContainer(props) {
 function GridContainer(props) {
     let viewport = window.innerWidth;
 
-    if (viewport <= 449) {
+    if (viewport <= 420) {
         return (React.createElement("div", { id: props.id, className: props.className, style: {
             display: 'block!important',
             overflow: 'scroll'

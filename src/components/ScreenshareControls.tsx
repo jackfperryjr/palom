@@ -12,9 +12,6 @@ const ScreenShareButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
   ${mq.MOBILE} {
     display: none!important;
   }

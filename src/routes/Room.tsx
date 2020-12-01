@@ -68,9 +68,6 @@ const SidebarToggleButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
   ${mq.MOBILE} {
     bottom: 90px;
     right: -22px;

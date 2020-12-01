@@ -14,7 +14,7 @@ const Container = styled.div`
   ${mq.MOBILE} {
     z-index: 200;
     bottom: 70px;
-    width: 185px;
+    width: 200px;
     right: 0;
   }
   ${mq.SMALL_DESKTOP} {
