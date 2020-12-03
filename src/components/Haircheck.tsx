@@ -125,10 +125,6 @@ const AcceptButton = styled(Button)`
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
     color: ${({ theme }) => colorToString(theme.buttonPrimaryText)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-    color: ${({ theme }) => colorToString(theme.buttonPrimaryText)};
-  }
   [disabled],
   :disabled {
     background-color: ${({ theme }) => colorToString(theme.buttonSecondaryBackground)};

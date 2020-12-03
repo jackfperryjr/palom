@@ -32,9 +32,6 @@ const MuteButton = styled(Button)<MutePauseButtonProps>`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
   &:not(:hover) svg {
     fill: ${props => (props.isOff ? 'white' : '')};
   }
@@ -59,9 +56,6 @@ const PauseButton = styled(Button)<MutePauseButtonProps>`
     fill: ${props => (props.isOff ? 'white' : '')};
   }
   :hover {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
-  :active {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
   ${mq.MOBILE} {

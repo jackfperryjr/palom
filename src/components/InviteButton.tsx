@@ -11,9 +11,6 @@ const CopyInviteButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
   svg {
     fill: ${({ theme }) => colorToString(theme.buttonPrimaryText)};
   }
@@ -33,7 +30,7 @@ export default class InviteButton extends Component<{}, State> {
     return (
       <CopyInviteButton onClick={this.onClick}>
         <LinkIcon />
-        <span>{this.state.copied ? 'Copied Link!' : 'Invite'}</span>
+        <span>{this.state.copied ? 'Copied!' : 'Invite'}</span>
       </CopyInviteButton>
     );
   }

@@ -88,9 +88,6 @@ const SendButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
   :focus {
     outline: 0;
   }

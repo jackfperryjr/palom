@@ -35,9 +35,6 @@ const SubmitButton = styled(Button)`
   :hover {
     background-color: ${({ theme }) => colorToString(theme.buttonPrimaryBackgroundHover)};
   }
-  :active {
-    background-color: ${({ theme }) => colorToString(theme.buttonPrimaryBackgroundActive)};
-  }
 `;
 
 const CancelButton = styled(Button)({

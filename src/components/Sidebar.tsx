@@ -8,7 +8,7 @@ import SidebarLinks from './SidebarLinks';
 import SidebarUserControls from './SidebarUserControls';
 
 const Container = styled.div`
-  position: absolute;
+  position: fixed;
   padding: 10px;
   background-color: transparent;
   ${mq.MOBILE} {

@@ -129,6 +129,9 @@ class Index extends Component<Props, State> {
               <Haircheck
                 onAccept={() => {
                   this.setState({ consentToJoin: true });
+                  const params = new URLSearchParams(window.location.search);
+                  let roomName = params.get('room');
+                  localStorage.setItem('roomName', roomName ? roomName : '');
                 }}
               />
             )}
@@ -267,10 +270,10 @@ class Index extends Component<Props, State> {
   private setPassword = (password: string) => {
     if (password) {
       // eslint-disable-next-line no-restricted-globals
-      history.pushState(null, '', `${window.location.pathname}?password=${password}`);
+      history.pushState(null, '', `${window.location.pathname}?room=${localStorage.getItem('roomName')}&password=${password}`);
     } else {
       // eslint-disable-next-line no-restricted-globals
-      history.pushState(null, '', `${window.location.pathname}`);
+      history.pushState(null, '', `${window.location.pathname}?room=${localStorage.getItem('roomName')}`);
     }
     this.setState({ password });
   };

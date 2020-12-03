@@ -5,7 +5,7 @@ const React = tslib_1.__importStar(require("react"));
 const PREDEFINED_LAYOUTS = new Map([
     [1, ['"x0"', 1, 1]],
     [2, ['"x0 x1"', 1, 2]],
-    [3, ['"x0 x1" "x0 x2"', 2, 2]]
+    [3, ['"x0 x1" "x2 x3"', 2, 2]]
 ]);
 function getGridTemplateAreas(numberOfItems) {
     if (PREDEFINED_LAYOUTS.has(numberOfItems)) {
@@ -42,7 +42,7 @@ function CellContainer(props) {
     return (React.createElement("div", { style: {
             display: 'flex',
             gridArea: getGridArea(props.index),
-            overflow: 'visible'
+            overflow: 'visible',
         } }, props.content));
 }
 function GridContainer(props) {

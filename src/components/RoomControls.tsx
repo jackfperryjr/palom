@@ -124,7 +124,6 @@ const RoomControls: React.SFC<Props> = ({
             : () => {
                   function keyGen() {
                     var i, key = "", characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-                
                     var charactersLength = characters.length;
                 
                     for (i = 0; i < 8; i++) {
@@ -152,8 +151,8 @@ const RoomControls: React.SFC<Props> = ({
         )}
       </LockButton>
       <LockedLabel>
-        {currentPassword && <span>Room locked: {currentPassword}</span>}
-        {!currentPassword && <span>Room unlocked!</span>}
+        {currentPassword && <span>Locked: {currentPassword}</span>}
+        {!currentPassword && <span>Unlocked!</span>}
       </LockedLabel>
       <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/penelo'}>
         <LeaveButton>
