@@ -67,11 +67,11 @@ const Controls = styled.div`
   }
   select {
     border: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
-    color: ${({ theme }) => colorToString(theme.foreground)};
+    color: #eeeeee;
     height: 40px;
     padding: 10px;
     margin-top: 5px;
-    background-color: ${({ theme }) => colorToString(theme.background)};
+    background-color: transparent;
     font-size: 12px;
     font-weight: bold;
     width: 100%;
@@ -82,12 +82,12 @@ const Controls = styled.div`
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
-
+    color: #00A6A6;
     svg {
       font-size: 20px;
       vertical-align: bottom;
       margin-right: 5px;
-      fill: ${({ theme }) => colorToString(theme.foreground)};
+      fill: #00A6A6;
     }
   }
 `;
@@ -208,7 +208,7 @@ class Haircheck extends React.Component<HaircheckProps, HaircheckState> {
           return (
             <>
             <Header>Ready to join?             
-              <p style={{ textAlign: 'center', fontSize: '14px', color: '#000000', fontWeight: 'normal'}}>{window.location.href}</p>
+              <p style={{ textAlign: 'center', fontSize: '14px', color: '#eeeeee', fontWeight: 'normal'}}>{window.location.href}</p>
             </Header>
             <Container>
               <Placeholders.Consumer>

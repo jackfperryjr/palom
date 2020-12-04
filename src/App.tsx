@@ -9,8 +9,7 @@ import mq from './styles/media-queries';
 
 const Container = styled.div`
   width: 100%;
-  background-color: #ffffff;
-  color: ${({ theme }) => colorToString(theme.foreground)};
+  color: #ffffff;
   a {
     color: ${({ theme }) => colorToString(theme.primaryBackground)};
     :hover {
@@ -41,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
+    background-color: #28282c!important;
   }
 
   body {
@@ -48,7 +48,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     line-height: 1.5;
     color: #4d5659;
-    background-color: transparent;
   }
 
   a {

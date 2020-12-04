@@ -47,10 +47,9 @@ interface BucketProps {
 }
 
 const Bucket = styled.div<BucketProps>`
-  border: 1px solid white;
   border-radius: 4px;
   height: 6px;
-  background-color: ${props => (props.filled ? (props.speaking ? 'green' : '#444') : '#ccc')};
+  background-color: ${props => (props.filled ? (props.speaking ? '#F79D65' : '#00A6A6') : '#444')}; 
 `;
 
 const VolumeMeter: React.SFC<Props> = ({

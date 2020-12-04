@@ -1,13 +1,13 @@
 import { Peer, PeerList, RemoteMediaList } from '@andyet/simplewebrtc';
-import GridLayout from '../components/GridLayout';
+import FlexLayout from './FlexLayout';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import HiddenPeers from '../contexts/HiddenPeers';
 import Placeholders from '../contexts/Placeholders';
 import PeerGridItem from './PeerGridItem';
 
-const StyledGridLayout = styled(GridLayout)({
-  flex: 1,
+const StyledGridLayout = styled(FlexLayout)({
+  // flex: 1,
   backgroundColor: '#000000',
   minHeight: '100%',
   maxHeight: '100%',

@@ -11,7 +11,7 @@ interface VideoLayoutProps<T> {
  * @public
  *
  */
-export default class GridLayout<T> extends React.Component<VideoLayoutProps<T>> {
+export default class FlexLayout<T> extends React.Component<VideoLayoutProps<T>> {
     render(): JSX.Element;
 }
 export {};

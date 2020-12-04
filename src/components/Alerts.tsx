@@ -24,7 +24,7 @@ const ErrorContainer = styled(Container)`
   border-radius: 50px;
   padding: 10px;
   height: 40px;
-  background-color: ${({ theme }) => colorToString(theme.alertErrorBackground)};
+  background-color: transparent;
   border-color: ${({ theme }) => colorToString(theme.alertErrorForeground)};
   color: ${({ theme }) => colorToString(theme.alertErrorForeground)};
   svg {
@@ -38,7 +38,7 @@ const InfoContainer = styled(Container)`
   border-radius: 50px;
   padding: 10px;
   height: 40px;
-  background-color: ${({ theme }) => colorToString(theme.alertInfoBackground)};
+  background-color: transparent;
   border-color: ${({ theme }) => colorToString(theme.alertInfoForeground)};
   color: ${({ theme }) => colorToString(theme.alertInfoForeground)};
   svg {
