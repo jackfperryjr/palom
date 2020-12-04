@@ -20,13 +20,13 @@ interface ContainerProps {
 
 const Container = styled.button<ContainerProps>`
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 20%;
-  text-align: left;
+  bottom: 40px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
   z-index: 300;
-  font-size: 18px;
-  border-radius: 50px;
+  border-radius: 50%;
+  font-size: 20px;
   border: ${({ newMessage, theme }) =>
     newMessage
       ? css`1px ${colorToString(theme.buttonAttentionBackground)} solid`
@@ -35,26 +35,14 @@ const Container = styled.button<ContainerProps>`
     newMessage ? colorToString(theme.buttonAttentionBackground) : 'transparent'};
   color: ${({ newMessage, theme }) =>
     newMessage ? colorToString(theme.buttonAttentionText) : "#ffffff"};
-  padding: 5px 15px;
   :focus {
     outline: 0;
   }
   svg {
     fill: ${({ newMessage, theme }) =>
       newMessage ? colorToString(theme.buttonActionText) : '#ffffff'};
-    vertical-align: middle;
-    font-size: 20px;
-    margin-right: 5px;
-    :last-of-type {
-      margin-left: 8px;
-      opacity: ${({ isTyping }) => (isTyping ? 1 : 0)};
-      font-size: 24px;
-      float: right;
-    }
   }
   ${mq.MOBILE} {
-    padding-bottom: 20px;
-    width: 100%;
   }
 `;
 
@@ -74,10 +62,8 @@ const ChatToggle: React.SFC<Props> = ({ roomAddress, onClick }) => {
                 isTyping={composers.length > 0}
                 newMessage={unreadCount > 0}
               >
-                <KeyboardArrowUpIcon />
                 {unreadCount > 0 ? <UnreadChatIcon /> : <ChatIcon />}
-                <span>Chat{unreadCount ? ` (${unreadCount})` : ''}</span>
-                <MoreHorizIcon />
+                <span>{unreadCount ? ` (${unreadCount})` : ''}</span>
               </Container>
             )}
           />

@@ -28,6 +28,8 @@ const pulseKeyFrames = keyframes`
 `;
 
 const MuteButton = styled(Button)<MutePauseButtonProps>`
+  grid-area: mute;
+  border-radius: 50%;
   background-color: ${props => (props.isOff ? '#e60045' : '')};
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
@@ -46,7 +48,6 @@ const MuteButton = styled(Button)<MutePauseButtonProps>`
       : ''}
   }
   ${mq.MOBILE} {
-    width: 50%;
   }
 `;
 
@@ -59,14 +60,16 @@ const PauseButton = styled(Button)<MutePauseButtonProps>`
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
   }
   ${mq.MOBILE} {
-    width: 50%;
   }
 `;
 
 const Container = styled.div({
+  position: 'fixed',
+  bottom: '40px',
+  left: '40%',
   display: 'flex',
-  marginBottom: '10px',
-  justifyContent: 'space-between'
+  justifyContent: 'center',
+  margin: '0 auto'
 });
 
 interface LocalMediaControlsProps {
@@ -93,7 +96,7 @@ const LocalMediaControls: React.SFC<LocalMediaControlsProps> = ({
   resumeVideo,
   pauseVideo
 }) => (
-  <Container>
+  <>
     <RequestUserMedia
       audio={{
         deviceId: {
@@ -125,7 +128,7 @@ const LocalMediaControls: React.SFC<LocalMediaControlsProps> = ({
       {isPaused ? <VideocamOffIcon /> : <VideocamIcon />}
     </PauseButton>
     <ScreenshareControls />
-  </Container>
+  </>
 );
 
 export default LocalMediaControls;

@@ -6,8 +6,6 @@ const Button = styled.button`
   border-radius: 5px;
   transition: background 200ms linear;
   font-size: 14px;
-  min-height: 30px;
-  min-width: 30%;
   border: none;
   color: ${({ theme }) => colorToString(theme.buttonSecondaryText)};
   background-color: ${({ theme }) => colorToString(theme.buttonSecondaryBackground)};

@@ -162,7 +162,6 @@ class Index extends Component<Props, State> {
                           <SidebarIcon fill="#505658" width="2em" height="2em" />
                         </SidebarToggleButton>
                       )}
-
                       <Connecting>
                         <LoadingState>
                           <h1>Connecting...</h1>

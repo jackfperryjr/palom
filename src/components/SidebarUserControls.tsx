@@ -2,36 +2,47 @@ import { LocalMediaList, Media, MediaControls, UserControls, Video } from '@andy
 import React from 'react';
 import styled from 'styled-components';
 import DisplayNameInput from './DisplayNameInput';
-import LocalMediaControls from './LocalMediaControls';
 import Tooltip from './Tooltip';
+import mq from '../styles/media-queries';
 
 const LocalVideo = styled.div({
-  position: 'relative',
+  position: 'fixed',
+  [mq.SMALL_DESKTOP]: {
+    bottom: '40px',
+    '& video': {
+      display: 'block',
+      objectFit: 'cover',
+      width: '250px',
+      height: 'auto',
+      borderRadius: '15px'
+    }
+  },
+  [mq.MOBILE]: {
+    bottom: '160px',
+    '& video': {
+      display: 'block',
+      objectFit: 'cover',
+      width: '200px',
+      height: '150px',
+      borderRadius: '15px'
+    }
+  },
   '& input': {
     position: 'absolute',
     top: 0,
-    right: 0,
     left: 0,
     zIndex: 100,
     width: '100%',
     boxSizing: 'border-box',
     border: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    color: 'white',
+    backgroundColor: 'rgba(0, 0, 0, 0.25)',
+    color: '#ffffff',
     fontSize: '14px',
     padding: '8px'
-  },
-  '& video': {
-    display: 'block',
-    objectFit: 'cover',
-    width: '100%',
-    height: '100%',
-    marginBottom: '10px'
   }
 });
 
 const RoomModeToggles = styled.div({
-  marginBottom: '10px',
   '& input': {
     marginRight: '5px'
   },
@@ -44,8 +55,7 @@ const RoomModeToggles = styled.div({
 const EmptyVideo = styled.div({
   width: '100%',
   height: '133px',
-  backgroundColor: '#000',
-  marginBottom: '10px'
+  backgroundColor: '#000000',
 });
 
 const ToggleContainer = styled.label({
@@ -124,7 +134,7 @@ const SidebarUserControls: React.SFC<Props> = ({
       user,
       setDisplayName
     }) => (
-      <div>
+      <>
         <LocalVideo>
           <DisplayNameInput displayName={user.displayName} setDisplayName={setDisplayName} />
           <LocalMediaList
@@ -149,17 +159,6 @@ const SidebarUserControls: React.SFC<Props> = ({
             }}
           />
         </LocalVideo>
-        <LocalMediaControls
-          hasAudio={hasAudio}
-          isMuted={isMuted}
-          unmute={unmute}
-          mute={mute}
-          isPaused={isPaused}
-          resumeVideo={() => resumeVideo({ screenCapture: false })}
-          pauseVideo={() => pauseVideo({ screenCapture: false })}
-          isSpeaking={isSpeaking}
-          isSpeakingWhileMuted={isSpeakingWhileMuted}
-        />
         <RoomModeToggles>
           {/*
               Disabled until SDK changes fixed to handle case where no one is speaking.
@@ -184,7 +183,7 @@ const SidebarUserControls: React.SFC<Props> = ({
             </ToggleContainer> */}
           </div>
         </RoomModeToggles>
-      </div>
+      </>
     )}
   />
 );

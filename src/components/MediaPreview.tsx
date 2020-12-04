@@ -19,7 +19,8 @@ const Container = styled.div({
     width: '100%',
     height: '100%',
     objectFit: 'cover',
-    backgroundColor: '#000000'
+    backgroundColor: '#000000',
+    borderRadius: '15px'
   }
 });
 

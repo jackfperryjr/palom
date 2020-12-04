@@ -29,9 +29,6 @@ const ScreenshareControls: React.SFC = () => (
     audio
     volumeMonitoring={deviceSupportsVolumeMonitoring()}
     render={(getDisplayMedia, sharing) => {
-      if (!sharing.available) {
-        return <EmptySpacer />;
-      }
 
       return (
         <ScreenShareButton title="Screen Share" onClick={getDisplayMedia}>

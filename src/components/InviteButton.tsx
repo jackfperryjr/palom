@@ -30,7 +30,6 @@ export default class InviteButton extends Component<{}, State> {
     return (
       <CopyInviteButton onClick={this.onClick}>
         <LinkIcon />
-        <span>{this.state.copied ? 'Copied!' : 'Invite'}</span>
       </CopyInviteButton>
     );
   }

@@ -1,11 +1,10 @@
 import CallEndIcon from 'material-icons-svg/components/baseline/CallEnd';
 import LockIcon from 'material-icons-svg/components/baseline/Lock';
 import LockOpenIcon from 'material-icons-svg/components/baseline/LockOpen';
-import HideIcon from 'material-icons-svg/components/baseline/TvOff';
 
 import React, { CSSProperties } from 'react';
 import Modal from 'react-modal';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { Button } from '../styles/button';
 import { colorToString } from '../utils/colorify';
 import getConfigFromMetaTag from '../utils/metaConfig';
@@ -19,14 +18,8 @@ const LockButton = styled(Button)`
   }
 `;
 
-const HideButton = styled(Button)`
-  gridArea: hide;
-  :hover {
-    background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
-  }
-`;
-
 const LeaveButton = styled(Button)`
+  background-color: #e60045;
   width: 100%;
   :hover {
     background-color: ${({ theme }) => colorToString(theme.secondaryBackground)};
@@ -39,15 +32,15 @@ const LockedLabel = styled.div({
 });
 
 const Container = styled.div({
-  display: 'grid',
   gridTemplateAreas: `
-    'pin pin'
-    'hide invite'
-    'leave lock'
+    'pin pin pin pin pin pin pin'
+    'mute pause share chat invite lock leave'
   `,
   gridColumnGap: '10px',
   gridRowGap: '10px',
-  marginBottom: '10px'
+  position: 'fixed',
+  bottom: '40px',
+  left: '51%'
 });
 
 const StyledModal = styled(Modal)`
@@ -109,11 +102,19 @@ const RoomControls: React.SFC<Props> = ({
   }
 
   return (
-    <Container>
-      <HideButton onClick={toggleSidebar}>
+    <>
+      <LockedLabel>
+        {currentPassword && <span>Locked: {currentPassword}</span>}
+        {!currentPassword && <span>Unlocked!</span>}
+      </LockedLabel>
+      {/* <HideButton onClick={toggleSidebar}>
         <HideIcon fill="#505658" />
-        <span>Hide</span>
-      </HideButton>
+      </HideButton> */}
+      <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/penelo'}>
+        <LeaveButton>
+          <CallEndIcon fill="#505658" />
+        </LeaveButton>
+      </a>
       <InviteButton />
       <LockButton
         onClick={
@@ -141,25 +142,13 @@ const RoomControls: React.SFC<Props> = ({
         {passwordRequired ? (
           <>
             <LockIcon fill="#505658" />
-            <span>Unlock</span>
           </>
         ) : (
           <>
             <LockOpenIcon fill="#505658" />
-            <span>Lock</span>
           </>
         )}
       </LockButton>
-      <LockedLabel>
-        {currentPassword && <span>Locked: {currentPassword}</span>}
-        {!currentPassword && <span>Unlocked!</span>}
-      </LockedLabel>
-      <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/penelo'}>
-        <LeaveButton>
-          <CallEndIcon fill="#505658" />
-          <span>Leave</span>
-        </LeaveButton>
-      </a>
       <StyledModal
         isOpen={shouldShowPasswordModal}
         onRequestClose={hidePasswordModal}
@@ -172,7 +161,7 @@ const RoomControls: React.SFC<Props> = ({
           onSubmit={hidePasswordModal}
         />
       </StyledModal>
-    </Container>
+    </>
   );
 };
 

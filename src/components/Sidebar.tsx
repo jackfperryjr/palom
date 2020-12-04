@@ -6,22 +6,33 @@ import RoomControls from './RoomControls';
 import Roster from './Roster';
 import SidebarLinks from './SidebarLinks';
 import SidebarUserControls from './SidebarUserControls';
+import { LocalMediaList, Media, MediaControls, UserControls, Video } from '@andyet/simplewebrtc';
+import LocalMediaControls from './LocalMediaControls';
 
 const Container = styled.div`
   position: fixed;
   padding: 10px;
   background-color: transparent;
+  text-align: center;
   ${mq.MOBILE} {
     z-index: 200;
     bottom: 70px;
-    width: 200px;
-    right: 0;
+    width: 100%;
+    margin: 0 auto;
   }
   ${mq.SMALL_DESKTOP} {
-    top: 30px;
-    width: 220px;
+    bottom: 40px;
+    width: 100%;
     z-index: 200;
-    left: 0;
+    margin: 0 auto;
+  }
+  & button {
+    border-radius: 50%;
+    max-width: 50px!important;
+    max-height: 50px!important;
+    width: 50px!important;
+    height: 50px!important;
+    display: inline;
   }
 `;
 
@@ -79,6 +90,33 @@ export default class Sidebar extends Component<Props, State> {
           currentPassword={currentPassword}
           sidebarOpen={sidebarOpen}
           toggleSidebar={toggleSidebar}
+        />
+        <UserControls
+          render={({
+            hasAudio,
+            isMuted,
+            mute,
+            unmute,
+            isPaused,
+            isSpeaking,
+            isSpeakingWhileMuted,
+            pauseVideo,
+            resumeVideo,
+            user,
+            setDisplayName
+          }) => (
+              <LocalMediaControls
+                hasAudio={hasAudio}
+                isMuted={isMuted}
+                unmute={unmute}
+                mute={mute}
+                isPaused={isPaused}
+                resumeVideo={() => resumeVideo({ screenCapture: false })}
+                pauseVideo={() => pauseVideo({ screenCapture: false })}
+                isSpeaking={isSpeaking}
+                isSpeakingWhileMuted={isSpeakingWhileMuted}
+              />
+          )}
         />
         <SidebarUserControls
           activeSpeakerView={activeSpeakerView}
