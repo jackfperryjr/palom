@@ -32,6 +32,7 @@ const BlankVideo = styled.div({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  borderRadius: '15px',
   '& p': {
     margin: 0
   }

@@ -12,8 +12,8 @@ const LocalVideo = styled.div({
     '& video': {
       display: 'block',
       objectFit: 'cover',
-      width: '250px',
-      height: 'auto',
+      width: '300px',
+      height: '250px',
       borderRadius: '15px'
     }
   },

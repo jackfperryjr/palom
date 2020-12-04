@@ -60,7 +60,7 @@ const Container = styled.div`
 // `;
 
 const Header = styled.button`
-  text-align: left;
+  text-align: right;
   border: 1px solid transparent;
   display: block;
   padding: 5px 15px;
