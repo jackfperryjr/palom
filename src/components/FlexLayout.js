@@ -59,7 +59,7 @@ function CellContainer(props) {
             width: '100%',
             maxWidth: `1245px`,
             height: '100%',
-            maxHeight: '946px',
+            maxHeight: `${vh}px`,
             justifyContent: 'space-around'
         } }, props.content));
     } else if (count === 2) {
@@ -73,7 +73,7 @@ function CellContainer(props) {
             width: '50%',
             maxWidth: '622.5px',
             height: '50%',
-            maxHeight: '473px',
+            maxHeight: `${vh / 2}px`,
             justifyContent: 'space-around'
         } }, props.content));
     } else {
@@ -81,7 +81,7 @@ function CellContainer(props) {
             width: '33.3%',
             maxWidth: '444.25px',
             height: '50%',
-            maxHeight: '473px',
+            maxHeight: `${vh / 2}px`,
             justifyContent: 'space-around'
         } }, props.content));
     }

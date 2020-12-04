@@ -452,7 +452,6 @@
       </div>
       <div class="container" style="padding: 100px 0 50px 0;">
         <div class="feed container">
-          <!-- <p style="color: #bdbdbd; text-align: center; margin: 0 auto;">Create a room or enter a friend's and click Go! It's that easy. No signups necessary. Once in you can simply share your link with friends and family. Try it out!</p> -->
         </div>
         <div class="pwa">
           <script async defer>
@@ -486,26 +485,47 @@
           method: 'get'
         }).then(response => response.json())
           .then(function(response) {
-            let img = document.createElement('img');
-            let p = document.createElement('p');
-            let span = document.createElement('span');
-            let div = document.createElement('div');
-
             if (!response.message && response.rooms && response.rooms.length > 0) {
               let rooms = response.rooms;
               for (i = 0; i < rooms.length; i++) {
+                let img = document.createElement('img');
+                let p = document.createElement('p');
+                let span = document.createElement('span');
+                let div = document.createElement('div');
                 img.src = "https://jackfperryjr.github.io/penelo/logo64.png";
                 p.innerHTML = 'Someone created the room <a href="https://jackfperryjr.github.io/penelo?room=' + rooms[i].name + '">'+ rooms[i].name +'</a>. Go check it out. It might have a password, though.';
                 let timestamp = new Date(rooms[i].created_at);
                 span.innerHTML = timestamp.toLocaleString();
+                div.classList.add('feed-block');
+                div.appendChild(img);
+                div.appendChild(p);
+                div.appendChild(span);
+                document.querySelector('.feed').appendChild(div);
               }
             } else {
+                let img = document.createElement('img');
+                let p = document.createElement('p');
+                let span = document.createElement('span');
+                let div = document.createElement('div');
                 img.src = "https://jackfperryjr.github.io/penelo/logo64.png";
                 p.innerHTML = "Seems there aren't any rooms active at the moment. You should go create one!";
                 let timestamp = new Date();
                 span.innerHTML = timestamp.toLocaleString();
+                div.classList.add('feed-block');
+                div.appendChild(img);
+                div.appendChild(p);
+                div.appendChild(span);
+                document.querySelector('.feed').appendChild(div);
             }
 
+            let img = document.createElement('img');
+            let p = document.createElement('p');
+            let span = document.createElement('span');
+            let div = document.createElement('div');
+            img.src = "https://jackfperryjr.github.io/penelo/logo64.png";
+            p.innerHTML = "Create a room or enter a friend's and click Go! It's that easy. No signups necessary. Once in you can simply share your link with friends and family. Try it out!";
+            let timestamp = new Date();
+            span.innerHTML = timestamp.toLocaleString();
             div.classList.add('feed-block');
             div.appendChild(img);
             div.appendChild(p);

@@ -27,6 +27,7 @@ const Container = styled.button<ContainerProps>`
   z-index: 300;
   border-radius: 50%;
   font-size: 20px;
+  padding-top: 5px;
   border: ${({ newMessage, theme }) =>
     newMessage
       ? css`1px ${colorToString(theme.buttonAttentionBackground)} solid`
@@ -62,8 +63,7 @@ const ChatToggle: React.SFC<Props> = ({ roomAddress, onClick }) => {
                 isTyping={composers.length > 0}
                 newMessage={unreadCount > 0}
               >
-                {unreadCount > 0 ? <UnreadChatIcon /> : <ChatIcon />}
-                <span>{unreadCount ? ` (${unreadCount})` : ''}</span>
+                {unreadCount > 0 ? <span>{unreadCount}</span> : <ChatIcon />}
               </Container>
             )}
           />
