@@ -90,12 +90,12 @@ function CellContainer(props) {
 function FlexContainer(props) {
     let viewport = window.innerWidth;
 
-    if (viewport <= 420) {
-        return (React.createElement("div", { id: props.id, className: props.className, style: {
-            display: 'block!important',
-            overflow: 'scroll'
-        } }, props.content));
-    } else {
+    // if (viewport <= 420) {
+    //     return (React.createElement("div", { id: props.id, className: props.className, style: {
+    //         display: 'block!important',
+    //         overflow: 'scroll'
+    //     } }, props.content));
+    // } else {
         return (React.createElement("div", { id: props.id, className: props.className, style: {
             display: 'flex',
             flexWrap: 'wrap',
@@ -105,7 +105,7 @@ function FlexContainer(props) {
             minWidth: '100%',
             overflow: 'hidden'
         } }, props.content));
-    }
+    // }
 }
 /**
  * @description

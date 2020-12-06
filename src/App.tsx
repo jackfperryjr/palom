@@ -9,7 +9,6 @@ import mq from './styles/media-queries';
 
 const Container = styled.div`
   width: 100%;
-  color: #ffffff;
   a {
     color: ${({ theme }) => colorToString(theme.primaryBackground)};
     :hover {
@@ -18,6 +17,10 @@ const Container = styled.div`
   }
   ${mq.MOBILE} {
     height: 100vh;
+    color: #eeeeee;
+  }
+  ${mq.SMALL_DESKTOP} {
+    color: #000000;  
   }
 `;
 
@@ -40,14 +43,21 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
-    background-color: #28282c!important;
+    background-color: #ffffff;
+  }
+
+  ${mq.MOBILE} {
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: #0c0c0c;
+    }
   }
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    color: #4d5659;
   }
 
   a {

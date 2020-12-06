@@ -43,6 +43,7 @@
     <link rel="manifest" href="https://jackfperryjr.github.io/penelo/manifest.json" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate"></script>
     <title>penelo</title>
     <style>
       body {
@@ -134,11 +135,6 @@
       *:after,
       *:before {
         box-sizing: border-box;
-      }
-
-      p {
-        margin-top: 0;
-        margin-bottom: 30px;
       }
 
       img,
@@ -257,10 +253,11 @@
       }
 
       .feed-block {
-        min-height: 100px;
-        height: 100px;
+        height: auto;
         width: 100%;
         margin-top: 10px;
+        margin-bottom: 20px;
+        padding-bottom: 60px;
         text-align: left;
         border-bottom: 1px solid #bdbdbd;
       }
@@ -303,8 +300,7 @@
           height: 100px;
           width: 100%;
           margin-top: 10px;
-          padding-right: 5px;
-          padding-left: 5px;
+          padding: 0 20px 40px 20px;
           text-align: left;
           border-bottom: 1px solid #bdbdbd;
         }
@@ -320,14 +316,18 @@
         }
 
         .feed-block {
-          min-height: 100px;
-          height: 100px;
+          height: auto;
           width: 100%;
           margin-top: 10px;
-          padding-right: 5px;
-          padding-left: 5px;
+          padding: 0 20px 40px 20px;
           text-align: left;
           border-bottom: 1px solid #bdbdbd;
+        }
+
+        .homepage-header {
+          padding-top: 36px;
+          background-color: #000000;
+          border-bottom: 1px solid #3f3f3f;
         }
       }
 
@@ -337,9 +337,9 @@
         }
         
         .homepage-header {
-          padding-top: 32px;
-          /* background-color: rgba(0,0,0,.05); */
-          border-bottom: 1px solid #eee;
+          padding-top: 36px;
+          background-color: #000000;
+          border-bottom: 1px solid #3f3f3f;
         }
 
         .homepage-header > img {
@@ -399,12 +399,10 @@
         }
 
         .feed-block {
-          min-height: 100px;
-          height: 100px;
+          height: auto;
           width: 100%;
-          margin-top: 10px;
-          padding-right: 5px;
-          padding-left: 5px;
+          margin-top: 20px;
+          padding: 0 15px 60px 15px;
           text-align: left;
           border-bottom: 1px solid #bdbdbd;
         }
@@ -415,6 +413,10 @@
           float: left;
           border-radius: 5px;
           margin-right: 10px;
+        }
+
+        .feed-block > span {
+          margin: 10px;
         }
       }
     </style>
@@ -455,15 +457,13 @@
         </div>
         <div class="pwa">
           <script async defer>
-            var installComponent = document.createElement("pwa-install");
+            let installComponent = document.createElement("pwa-install");
             document.querySelector('.pwa').appendChild(installComponent);
             //installComponent.getInstalledStatus();
           </script>
-          <script type="module">
-            import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-            const el = document.createElement('pwa-update');
-            document.body.appendChild(el);
+          <script async defer>
+            let updateComponent = document.createElement('pwa-update');
+            document.querySelector('.pwa').appendChild(updateComponent);
           </script>
         </div>
       </div>
@@ -488,19 +488,20 @@
             if (!response.message && response.rooms && response.rooms.length > 0) {
               let rooms = response.rooms;
               for (i = 0; i < rooms.length; i++) {
-                let img = document.createElement('img');
-                let p = document.createElement('p');
-                let span = document.createElement('span');
-                let div = document.createElement('div');
-                img.src = "https://jackfperryjr.github.io/penelo/logo64.png";
-                p.innerHTML = 'Someone created the room <a href="https://jackfperryjr.github.io/penelo?room=' + rooms[i].name + '">'+ rooms[i].name +'</a>. Go check it out. It might have a password, though.';
-                let timestamp = new Date(rooms[i].created_at);
-                span.innerHTML = timestamp.toLocaleString();
-                div.classList.add('feed-block');
-                div.appendChild(img);
-                div.appendChild(p);
-                div.appendChild(span);
-                document.querySelector('.feed').appendChild(div);
+                // TODO: Rethink this.
+                // let img = document.createElement('img');
+                // let p = document.createElement('p');
+                // let span = document.createElement('span');
+                // let div = document.createElement('div');
+                // img.src = "https://jackfperryjr.github.io/penelo/logo64.png";
+                // p.innerHTML = 'Someone created the room <a href="https://jackfperryjr.github.io/penelo?room=' + rooms[i].name + '">'+ rooms[i].name +'</a>. Go check it out. It might have a password, though.';
+                // let timestamp = new Date(rooms[i].created_at);
+                // span.innerHTML = timestamp.toLocaleString();
+                // div.classList.add('feed-block');
+                // div.appendChild(img);
+                // div.appendChild(p);
+                // div.appendChild(span);
+                // document.querySelector('.feed').appendChild(div);
               }
             } else {
                 let img = document.createElement('img');
