@@ -48,7 +48,7 @@ const Container = styled.div({
 const Header = styled.div({
   gridArea: 'header',
   marginTop: '25px',
-  marginBottom: '-30px',
+  marginBottom: '-10px',
   textAlign: 'center',
   fontSize: '30px',
   fontWeight: 'bolder',
@@ -67,7 +67,7 @@ const Controls = styled.div`
   }
   select {
     border: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
-    color: #eeeeee;
+    color: #3f3f3f;
     height: 40px;
     padding: 10px;
     margin-top: 5px;
@@ -208,7 +208,7 @@ class Haircheck extends React.Component<HaircheckProps, HaircheckState> {
           return (
             <>
             <Header>Ready to join?             
-              <p style={{ textAlign: 'center', fontSize: '14px', color: '#eeeeee', fontWeight: 'normal'}}>{window.location.href}</p>
+              <p style={{ textAlign: 'center', fontSize: '14px', color: '#3f3f3f', fontWeight: 'normal'}}>{window.location.href}</p>
             </Header>
             <Container>
               <Placeholders.Consumer>

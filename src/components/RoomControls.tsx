@@ -28,7 +28,8 @@ const LeaveButton = styled(Button)`
 
 const LockedLabel = styled.div({
   gridArea: 'pin',
-  textAlign: 'center'
+  textAlign: 'center',
+  color: '#3f3f3f'
 });
 
 const Container = styled.div({
@@ -104,7 +105,7 @@ const RoomControls: React.SFC<Props> = ({
   return (
     <>
       <LockedLabel>
-        {currentPassword && <span>Locked: {currentPassword}</span>}
+        {currentPassword && <span>Password: {currentPassword}</span>}
         {!currentPassword && <span>Unlocked!</span>}
       </LockedLabel>
       {/* <HideButton onClick={toggleSidebar}>
@@ -117,6 +118,7 @@ const RoomControls: React.SFC<Props> = ({
       </a>
       <InviteButton />
       <LockButton
+        style={{ backgroundColor: `${passwordRequired ? '#e60045' : ''}` }}
         onClick={
           passwordRequired
             ? () => {
