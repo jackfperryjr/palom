@@ -210,7 +210,7 @@ class Index extends Component<Props, State> {
                           </LoadingState>
                         )}
                       </Connected>
-                      {this.state.chatOpen ? (
+                      {/* {this.state.chatOpen ? (
                         <ChatContainer
                           disabled={!room.joined}
                           roomAddress={room.address!}
@@ -218,7 +218,7 @@ class Index extends Component<Props, State> {
                         />
                       ) : (
                         <ChatToggle roomAddress={room.address!} onClick={this.toggleChat} />
-                      )}
+                      )} */}
                     </Container>
                   );
                 }}

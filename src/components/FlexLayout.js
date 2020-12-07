@@ -55,21 +55,41 @@ function CellContainer(props) {
     let vw = window.innerWidth;
 
     if (count === 1) {
-        return (React.createElement("div", { style: {
-            width: '100%',
-            maxWidth: `1245px`,
-            height: '100%',
-            maxHeight: `${vh}px`,
-            justifyContent: 'space-around'
-        } }, props.content));
+        if (vw <= 420) {
+            return (React.createElement("div", { style: {
+                width: '100%',
+                maxWidth: `1245px`,
+                height: '100vh',
+                maxHeight: `${vh}px`,
+                justifyContent: 'space-around'
+            } }, props.content));
+        } else {
+            return (React.createElement("div", { style: {
+                width: '100%',
+                maxWidth: `1245px`,
+                height: '100%',
+                maxHeight: `${vh}px`,
+                justifyContent: 'space-around'
+            } }, props.content));
+        }
     } else if (count === 2) {
-        return (React.createElement("div", { style: {
-            width: `${vw <= 420 ? 100 : 50}%`,
-            maxWidth: '1245px',
-            height: '100%',
-            maxHeight: `${vh / 2}px`,
-            justifyContent: 'space-around'
-        } }, props.content));
+        if (vw <= 420) {
+            return (React.createElement("div", { style: {
+                width: `${vw <= 420 ? 100 : 50}%`,
+                maxWidth: '1245px',
+                height: '50vh',
+                maxHeight: `${vh / 2}px`,
+                justifyContent: 'space-around'
+            } }, props.content));
+        } else {
+            return (React.createElement("div", { style: {
+                width: `${vw <= 420 ? 100 : 50}%`,
+                maxWidth: '1245px',
+                height: '100%',
+                maxHeight: `${vh / 2}px`,
+                justifyContent: 'space-around'
+            } }, props.content));
+        }
     } else if (count > 2 && count < 5) {
         return (React.createElement("div", { style: {
             width: `${vw <= 420 ? 100 : 50}%`,

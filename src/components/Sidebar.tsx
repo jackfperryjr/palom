@@ -8,6 +8,8 @@ import SidebarLinks from './SidebarLinks';
 import SidebarUserControls from './SidebarUserControls';
 import { LocalMediaList, Media, MediaControls, UserControls, Video } from '@andyet/simplewebrtc';
 import LocalMediaControls from './LocalMediaControls';
+import ChatContainer from '../components/ChatContainer';
+import ChatToggle from '../components/ChatToggle';
 
 const Container = styled.div`
   position: fixed;
@@ -28,10 +30,8 @@ const Container = styled.div`
   }
   & button {
     border-radius: 50%;
-    max-width: 50px!important;
-    max-height: 50px!important;
-    width: 50px!important;
-    height: 50px!important;
+    width: 50px;
+    height: 50px;
     display: inline;
   }
 `;
@@ -52,6 +52,7 @@ interface Props {
 
 interface State {
   showPasswordModal: boolean;
+  chatOpen: boolean;
 }
 
 // Sidebar contains all the UI elements that are rendered in the Sidebar
@@ -60,7 +61,10 @@ interface State {
 export default class Sidebar extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = { showPasswordModal: false };
+    this.state = { 
+      showPasswordModal: false,
+      chatOpen: false 
+    };
   }
 
   public render() {
@@ -118,6 +122,18 @@ export default class Sidebar extends Component<Props, State> {
               />
           )}
         />
+        {this.state.chatOpen ? (
+          <>
+          <ChatToggle roomAddress={roomAddress!} onClick={this.toggleChat} />
+          <ChatContainer
+            // disabled={!room.joined}
+            roomAddress={roomAddress!}
+            toggleChat={this.toggleChat}
+          />
+          </>
+        ) : (
+          <ChatToggle roomAddress={roomAddress!} onClick={this.toggleChat} />
+        )}
         <SidebarUserControls
           activeSpeakerView={activeSpeakerView}
           toggleActiveSpeakerView={toggleActiveSpeakerView}
@@ -136,5 +152,9 @@ export default class Sidebar extends Component<Props, State> {
 
   private hidePasswordModal = () => {
     this.setState({ showPasswordModal: false });
+  };
+
+  private toggleChat = () => {
+    this.setState({ chatOpen: !this.state.chatOpen });
   };
 }

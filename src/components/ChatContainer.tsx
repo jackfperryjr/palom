@@ -21,10 +21,11 @@ import Linkify from './Linkify';
 const Container = styled.div`
   position: fixed;
   padding-top: 25px;
+  top: 0;
   right: 0;
   display: flex;
   flex-direction: column;
-  border-top: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
+  border-top: 1px solid #3f3f3f;
   z-index: 300;
   background-color: rgba(0,0,0,.5);
   overflow: hidden;
@@ -43,7 +44,7 @@ const Container = styled.div`
   ${mq.SMALL_DESKTOP} {
     width: 20%;
     border-top: none;
-    border-left: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
+    border-left: 1px solid #3f3f3f;
   }
   ${mq.MOBILE} {
     border: none;
@@ -60,11 +61,11 @@ const Container = styled.div`
 // `;
 
 const Header = styled.button`
-  text-align: right;
+  text-align: right!important;
   border: 1px solid transparent;
   display: block;
   padding: 5px 15px;
-  font-size: 18px;
+  font-size: 28px;
   outline: none;
   color: #ffffff;
   background-color: transparent;
@@ -74,15 +75,25 @@ const Header = styled.button`
     font-size: 20px;
     margin-right: 5px;
   }
+  & span {
+    position: absolute;
+    right: 25px;
+    bottom: 40px;
+  }
+  ${mq.SMALL_DESKTOP} {
+    & span {
+        display: none;
+    }
+  }
 `;
 
 const SendButton = styled(Button)`
-  border-radius: 5px;
   transition: background 200ms linear;
   font-size: 14px;
   min-height: 30px;
-  min-width: 30px;
+  min-width: 50px;
   border: none;
+  border-radius: 5px!important;
   color: ${({ theme }) => colorToString(theme.buttonPrimaryText)};
   background-color: ${({ theme }) => colorToString(theme.primaryBackground)};
   :hover {
@@ -122,7 +133,7 @@ const StyledStayDownContainer = styled(StayDownContainer)`
 `;
 
 const ChatContainerHeader = styled.div`
-  border-bottom: ${({ theme }) => css`1px solid ${colorToString(theme.border)}`};
+  border-bottom: 1px solid #3f3f3f;
   text-align: center;
   color: #ffffff;
   font-size: 16px;
@@ -173,6 +184,7 @@ const InputContainer = styled.div`
 `;
 
 const Message = styled.div`
+  text-align: left;
   position: relative;
   padding: 10px;
   font-size: 14px;
@@ -252,11 +264,11 @@ const ChatContainer: React.SFC<Props> = ({ roomAddress, toggleChat, disabled }) 
           <>
             <ChatInputTextArea {...chatProps} />
             {disabled 
-              ? <Button onClick={chatProps.sendMessage} style={{ float: 'right' }}>
+              ? <Button onClick={chatProps.sendMessage} style={{ float: 'right', width: '80px', height: '30px' }}>
                   <SendIcon />
                   <span>Send</span>
                 </Button> 
-              : <SendButton onClick={chatProps.sendMessage} style={{ float: 'right' }}>
+              : <SendButton onClick={chatProps.sendMessage} style={{ float: 'right', width: '80px', height: '30px' }}>
                   <SendIcon />
                   <span>Send</span>
                 </SendButton>
@@ -273,9 +285,9 @@ const ChatContainer: React.SFC<Props> = ({ roomAddress, toggleChat, disabled }) 
       <ChatComposers room={roomAddress} />
     </ComposersContainer>
     <Header onClick={toggleChat}>
-      <KeyboardArrowDownIcon />
-      <ChatIcon />
-      <span>Close</span>
+      {/* <KeyboardArrowDownIcon />
+      <ChatIcon /> */}
+      <span>X</span>
     </Header>
   </Container>
 );

@@ -19,27 +19,23 @@ interface ContainerProps {
 }
 
 const Container = styled.button<ContainerProps>`
-  position: fixed;
-  bottom: 40px;
-  right: 20px;
   width: 50px;
   height: 50px;
   z-index: 300;
   border-radius: 50%;
-  font-size: 20px;
-  padding-top: 5px;
   border: ${({ newMessage, theme }) =>
     newMessage
       ? css`1px ${colorToString(theme.buttonAttentionBackground)} solid`
-      : css`1px solid #ffffff`};
+      : css`none`};
   background: ${({ newMessage, theme }) =>
-    newMessage ? colorToString(theme.buttonAttentionBackground) : 'transparent'};
+    newMessage ? colorToString(theme.buttonAttentionBackground) : '#00A6A6'};
   color: ${({ newMessage, theme }) =>
     newMessage ? colorToString(theme.buttonAttentionText) : "#ffffff"};
   :focus {
     outline: 0;
   }
   svg {
+    vertical-align: middle;
     fill: ${({ newMessage, theme }) =>
       newMessage ? colorToString(theme.buttonActionText) : '#ffffff'};
   }
