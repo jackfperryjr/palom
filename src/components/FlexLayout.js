@@ -64,13 +64,15 @@ function CellContainer(props) {
         } }, props.content));
     } else if (count === 2) {
         return (React.createElement("div", { style: {
-            width: '50%',
+            width: `${vw <= 420 ? 100 : 50}%`,
             maxWidth: '1245px',
+            height: '100%',
+            maxHeight: `${vh / 2}px`,
             justifyContent: 'space-around'
         } }, props.content));
     } else if (count > 2 && count < 5) {
         return (React.createElement("div", { style: {
-            width: '50%',
+            width: `${vw <= 420 ? 100 : 50}%`,
             maxWidth: '622.5px',
             height: '50%',
             maxHeight: `${vh / 2}px`,
@@ -78,7 +80,7 @@ function CellContainer(props) {
         } }, props.content));
     } else {
         return (React.createElement("div", { style: {
-            width: '33.3%',
+            width: `${vw <= 420 ? 50 : 33.3}%`,
             maxWidth: '444.25px',
             height: '50%',
             maxHeight: `${vh / 2}px`,
@@ -90,22 +92,30 @@ function CellContainer(props) {
 function FlexContainer(props) {
     let viewport = window.innerWidth;
 
-    // if (viewport <= 420) {
-    //     return (React.createElement("div", { id: props.id, className: props.className, style: {
-    //         display: 'block!important',
-    //         overflow: 'scroll'
-    //     } }, props.content));
-    // } else {
+    if (viewport <= 420) {
         return (React.createElement("div", { id: props.id, className: props.className, style: {
             display: 'flex',
             flexWrap: 'wrap',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100%',
+            minWidth: '100%',
+            width: '100%',
+            overflow: 'hidden'
+        } }, props.content));
+    } else {
+        return (React.createElement("div", { id: props.id, className: props.className, style: {
+            display: 'flex',
+            flexWrap: 'wrap',
+            flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
             minHeight: '100%',
             minWidth: '100%',
             overflow: 'hidden'
         } }, props.content));
-    // }
+    }
 }
 /**
  * @description
