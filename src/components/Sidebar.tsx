@@ -55,9 +55,10 @@ interface State {
   chatOpen: boolean;
 }
 
-// Sidebar contains all the UI elements that are rendered in the Sidebar
-// inside a Room.
-// TODO: Use Router to navigate to feedback page.
+// Sidebar contains all the UI elements that are rendered 
+// in the Sidebar inside a Room
+
+// TODO: Use Router to navigate to feedback page
 export default class Sidebar extends Component<Props, State> {
   constructor(props: Props) {
     super(props);

@@ -286,6 +286,12 @@
         text-align: center;
       }
 
+      @media (max-width: 849px)  {
+        .feed-block {
+          border-bottom: 1px solid #3f3f3f;
+        }
+      }
+
       @media (min-width: 510px) and (max-width: 611px)  {
         .container {
           width: 100%;
@@ -302,7 +308,7 @@
           margin-top: 10px;
           padding: 0 20px 40px 20px;
           text-align: left;
-          border-bottom: 1px solid #bdbdbd;
+          border-bottom: 1px solid #3f3f3f;
         }
       }
 
@@ -321,7 +327,7 @@
           margin-top: 10px;
           padding: 0 20px 40px 20px;
           text-align: left;
-          border-bottom: 1px solid #bdbdbd;
+          border-bottom: 1px solid #3f3f3f;
         }
 
         .homepage-header {
@@ -488,7 +494,7 @@
             if (!response.message && response.rooms && response.rooms.length > 0) {
               let rooms = response.rooms;
               for (i = 0; i < rooms.length; i++) {
-                // TODO: Rethink this.
+                // TODO: Rethink this
                 // let img = document.createElement('img');
                 // let p = document.createElement('p');
                 // let span = document.createElement('span');

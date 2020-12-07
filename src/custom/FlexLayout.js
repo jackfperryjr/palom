@@ -3,52 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const React = tslib_1.__importStar(require("react"));
 
-// const PREDEFINED_LAYOUTS = new Map([
-//     [1, ['"x0"', 1, 1]],
-//     [2, ['"x0 x1"', 1, 2]],
-//     [3, ['"x0 x1" "x2 x3"', 2, 2]]
-// ]);
-
-
-// function getGridTemplateAreas(numberOfItems) {
-//     if (PREDEFINED_LAYOUTS.has(numberOfItems)) {
-//         return PREDEFINED_LAYOUTS.get(numberOfItems)[0];
-//     }
-//     const columns = getGridTemplateColumns(numberOfItems);
-//     const rows = getGridTemplateRows(numberOfItems);
-//     const gridTemplateRows = [];
-//     for (let i = 0; i < rows; i++) {
-//         const row = [];
-//         for (let j = 0; j < columns; j++) {
-//             row.push('x' + (i * columns + j).toString(16));
-//         }
-//         gridTemplateRows.push(`"${row.join(' ')}"`);
-//     }
-//     return gridTemplateRows.join(' ');
-// }
-
-
-// function getGridTemplateColumns(numberOfItems) {
-//     if (PREDEFINED_LAYOUTS.has(numberOfItems)) {
-//         return PREDEFINED_LAYOUTS.get(numberOfItems)[2];
-//     }
-//     return Math.ceil(Math.pow(numberOfItems, 0.5));
-// }
-
-
-// function getGridTemplateRows(numberOfItems) {
-//     if (PREDEFINED_LAYOUTS.has(numberOfItems)) {
-//         return PREDEFINED_LAYOUTS.get(numberOfItems)[1];
-//     }
-//     return Math.ceil(numberOfItems / Math.ceil(Math.pow(numberOfItems, 0.5)));
-// }
-
-
-// function getGridArea(index) {
-//     return 'x' + index.toString(16);
-// }
-
-
 function CellContainer(props) {
     let count = props.count;
     let vh = window.innerHeight;

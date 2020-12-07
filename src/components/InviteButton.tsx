@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Button } from '../styles/button';
 import { colorToString } from '../utils/colorify';
+import Tooltip from './Tooltip';
 
 const CopyInviteButton = styled(Button)`
   grid-area: invite;

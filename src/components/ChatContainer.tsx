@@ -25,10 +25,11 @@ const Container = styled.div`
   right: 0;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #3f3f3f;
   z-index: 300;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(10, 10, 10, .2);
   overflow: hidden;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 
   & .msg:last-of-type {
     border-bottom: none;
@@ -44,7 +45,6 @@ const Container = styled.div`
   ${mq.SMALL_DESKTOP} {
     width: 20%;
     border-top: none;
-    border-left: 1px solid #3f3f3f;
   }
   ${mq.MOBILE} {
     border: none;
@@ -133,7 +133,6 @@ const StyledStayDownContainer = styled(StayDownContainer)`
 `;
 
 const ChatContainerHeader = styled.div`
-  border-bottom: 1px solid #3f3f3f;
   text-align: center;
   color: #ffffff;
   font-size: 16px;

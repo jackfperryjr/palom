@@ -1,6 +1,11 @@
 import { colorFromHex, colorFromHsl } from '../utils/colorify';
 
 const colors = {
+  // TODO: Align colors to create actual themes
+  
+  // TODO: Use theme throughout app in place of
+  // hard-coded color codes
+  
   blueSaturatedDarker: colorFromHsl(195, 100 / 100, 5 / 100),
   blueSaturatedDark: colorFromHsl(195, 100 / 100, 10 / 100),
   blueSaturated: colorFromHsl(195, 100 / 100, 14 / 100),
@@ -44,7 +49,7 @@ const colors = {
   orangeLighter: colorFromHsl(34, 98 / 100, 92 / 100),
 
 
-  ghostWhite: colorFromHex('#ffffff'), //ghostWhite
+  ghostWhite: colorFromHex('#ffffff'),
 
   lightSeaGreen: colorFromHex('#00A6A6'), 
   atomicTangerine: colorFromHex('#F79D65'), 
