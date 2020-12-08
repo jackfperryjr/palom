@@ -55,7 +55,7 @@ const RoomModeToggles = styled.div({
 const EmptyVideo = styled.div({
   width: '100%',
   height: '133px',
-  backgroundColor: '#000000',
+  backgroundColor: '#000000'
 });
 
 const ToggleContainer = styled.label({

@@ -20,7 +20,7 @@ const Container = styled.div`
     color: #eeeeee;
   }
   ${mq.SMALL_DESKTOP} {
-    color: #000000;  
+    color: #eeeeee; 
   }
 `;
 
@@ -43,14 +43,14 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #000000;
   }
 
   ${mq.MOBILE} {
     body, html {
       margin: 0;
       padding: 0;
-      background-color: #0c0c0c;
+      background-color: #000000;
     }
   }
 
