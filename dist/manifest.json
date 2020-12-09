@@ -25,38 +25,73 @@
     ],
     "icons": [
       {
-        "src": "logo512.png",
+        "src": "logo1024-rc-maskable.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "1024x1024",
+        "purpose": "any maskable"
       },
       {
-        "src": "logo256.png",
+        "src": "logo1024-rc-maskable@2x.png",
         "type": "image/png",
-        "sizes": "256x256"
+        "sizes": "1024x1024",
+        "purpose": "any maskable"
       },
       {
-        "src": "logo192.png",
+        "src": "logo512-rc-maskable.png",
         "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "512x512",
+        "purpose": "any maskable"
       },
       {
-        "src": "logo128.png",
+        "src": "logo512-rc-maskable@2x.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo256-rc-maskable.png",
+        "type": "image/png",
+        "sizes": "256x256",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo256-rc-maskable@2x.png",
+        "type": "image/png",
+        "sizes": "256x256",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo192-rc-maskable.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo192-rc-maskable@2x.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo128-rc-maskable.png",
+        "type": "image/png",
         "sizes": "128x128",
-        "type": "image/png"
+        "purpose": "any maskable"
       },
       {
-        "src": "favicon.ico",
+        "src": "logo128-rc-maskable@2x.png",
+        "type": "image/png",
+        "sizes": "128x128",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "logo64.png",
         "sizes": "48x48",
-        "type": "image/x-icon"
-      },
-      {
-        "src": "favicon-32x32.png",
-        "sizes": "32x32",
         "type": "image/png"
       },
       {
-        "src": "favicon-16x16.png",
-        "sizes": "16x16",
+        "src": "logo32.png",
+        "sizes": "32x32",
         "type": "image/png"
       }
     ],

@@ -4,17 +4,20 @@
     <meta charset="utf-8" />
     <link rel="icon" href="https://jackfperryjr.github.io/penelo/favicon.ico" sizes="48x48"/>
     <meta name="viewport" content="viewport-fit=cover,width=device-width, initial-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#000000" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Penelo" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="apple-touch-icon" sizes="1024x1024" href="https://jackfperryjr.github.io/penelo/logo1024.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="https://jackfperryjr.github.io/penelo/logo512.png" />
-    <link rel="apple-touch-icon" sizes="256x256" href="https://jackfperryjr.github.io/penelo/logo256.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="https://jackfperryjr.github.io/penelo/logo192.png" />
-    <link rel="apple-touch-icon" sizes="128x128" href="https://jackfperryjr.github.io/penelo/logo128.png" />
-    <link rel="apple-touch-icon" sizes="64x64" href="https://jackfperryjr.github.io/penelo/logo64.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
     <link rel="apple-touch-startup-image" href="https://jackfperryjr.github.io/penelo/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" />
     <link rel="apple-touch-startup-image" href="https://jackfperryjr.github.io/penelo/splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" />
     <link rel="apple-touch-startup-image" href="https://jackfperryjr.github.io/penelo/splashscreens/iphoneplus_splash.png" media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)" />
@@ -286,9 +289,19 @@
         text-align: center;
       }
 
+      #full-overlay,
+      #full-overlay-img {
+        display: none;
+      }
+
       @media (max-width: 849px)  {
         .feed-block {
           border-bottom: 1px solid #3f3f3f;
+        }
+
+        #full-overlay,
+        #full-overlay-img {
+          display: none;
         }
       }
 
@@ -309,6 +322,11 @@
           padding: 0 20px 40px 20px;
           text-align: left;
           border-bottom: 1px solid #3f3f3f;
+        }
+
+        #full-overlay,
+        #full-overlay-img {
+          display: none;
         }
       }
 
@@ -335,9 +353,41 @@
           background-color: #0c0c0c;
           border-bottom: 1px solid #3f3f3f;
         }
+
+        #full-overlay,
+        #full-overlay-img {
+          display: none;
+        }
       }
 
       @media (max-width: 420px) {
+        #full-overlay {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          background-color: #000000;
+          z-index: 1000;
+          -webkit-transition:200ms linear;
+          -moz-transition:200ms linear;
+          -o-transition:200ms linear;
+          -ms-transition:200ms linear;
+          transition:200ms linear;
+        }
+        #full-overlay-img {
+          display: block;
+          position: relative; 
+          top: 27%;
+          width: 160px;
+          height: 160px;
+          margin: 0 auto;
+          -webkit-transition:200ms linear;
+          -moz-transition:200ms linear;
+          -o-transition:200ms linear;
+          -ms-transition:200ms linear;
+          transition:200ms linear;
+        }
         .container {
           width: 100%;
         }
@@ -428,6 +478,9 @@
     </style>
   <script type="text/javascript" src="bundle.min.js"></script></head>
   <body onload="getPenelo()">
+    <div id="full-overlay">
+      <img id="full-overlay-img" src="https://jackfperryjr.github.io/penelo/logo192.png" alt="Penelo logo"/>
+    </div>
     <div id="root"></div>
     <template id="haircheck-header">
     </template>
@@ -487,6 +540,7 @@
       });
 
       function getPenelo() {
+        setTimeout(shrink, 500);
         fetch('https://chocoboapi.azurewebsites.net/v1/account/penelo', {
           method: 'get'
         }).then(response => response.json())
@@ -539,6 +593,11 @@
             div.appendChild(span);
             document.querySelector('.feed').appendChild(div);
         });
+      }
+      function shrink() {
+        document.getElementById("full-overlay").style.borderRadius="15px";
+        document.getElementById("full-overlay").style.width="0px";
+        document.getElementById("full-overlay").style.height="0px";
       }
     </script>
   </body>
