@@ -97,7 +97,7 @@
     ],
     "screenshots": [
       {
-        "src": "screen1.png"
+        "src": "screen1.jpg"
       },
       {
         "src": "screen2.png"
@@ -106,13 +106,19 @@
         "src": "screen3.png"
       },
       {
-        "src": "screen4.jpg"
+        "src": "screen4.png"
       },
       {
-        "src": "screen5.jpg"
+        "src": "screen5.png"
       },
       {
         "src": "screen6.jpg"
+      },
+      {
+        "src": "screen7.jpg"
+      },
+      {
+        "src": "screen8.jpg"
       }
     ],
     "features": [
