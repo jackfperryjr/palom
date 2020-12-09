@@ -43,14 +43,14 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
-    background-color: #000000;
+    background-color: #0c0c0c;
   }
 
   ${mq.MOBILE} {
     body, html {
       margin: 0;
       padding: 0;
-      background-color: #000000;
+      background-color: #0c0c0c;
     }
   }
 

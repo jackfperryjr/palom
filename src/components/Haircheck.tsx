@@ -101,7 +101,9 @@ const Preview = styled.div({
 
 const PermissionButton = styled(Button)({
   marginBottom: '5px',
-  width: '100%'
+  width: '100%',
+  borderRadius: '50px',
+  height: '40px'
 });
 
 const Volume = styled.div({
@@ -112,7 +114,8 @@ const Volume = styled.div({
 });
 
 const AcceptButtonContainer = styled.div({
-  textAlign: 'center'
+  textAlign: 'center',
+
 });
 
 const AcceptButton = styled(Button)`
