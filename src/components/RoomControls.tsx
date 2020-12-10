@@ -111,7 +111,7 @@ const RoomControls: React.SFC<Props> = ({
       {/* <HideButton onClick={toggleSidebar}>
         <HideIcon fill="#505658" />
       </HideButton> */}
-      <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/penelo'}>
+      <a style={{ gridArea: 'leave' }} href={parsedLeaveUrl ? parsedLeaveUrl.toString() : '/'}>
         <LeaveButton>
           <CallEndIcon fill="#505658" />
         </LeaveButton>
