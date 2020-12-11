@@ -540,12 +540,25 @@
       });
 
       function getPenelo() {
-        setTimeout(shrink, 500);
-        fetch('https://chocoboapi.azurewebsites.net/v1/account/penelo', {
+        //setTimeout(shrink, 500);
+        askNotificationPermission();
+
+        fetch('https://api.penelo.me/v1/account/token', {
           method: 'get'
         }).then(response => response.json())
           .then(function(response) {
-            if (!response.message && response.rooms && response.rooms.length > 0) {
+            console.log(response.token);
+            localStorage.setItem('token', response.token)
+          });
+
+        fetch('https://api.penelo.me/v1/account/penelo', {
+          method: 'get',
+          headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('token')
+          }
+        }).then(response => response.json())
+          .then(function(response) {
+            if (response.rooms && response.rooms.length > 0) {
               let rooms = response.rooms;
               for (i = 0; i < rooms.length; i++) {
                 // TODO: Rethink this
@@ -579,25 +592,91 @@
                 document.querySelector('.feed').appendChild(div);
             }
 
-            let img = document.createElement('img');
-            let p = document.createElement('p');
-            let span = document.createElement('span');
-            let div = document.createElement('div');
-            img.src = "/logo64.png";
-            p.innerHTML = "Create a room or enter a friend's and click Go! It's that easy. No signups necessary. Once in you can simply share your link with friends and family. Try it out!";
-            let timestamp = new Date();
-            span.innerHTML = timestamp.toLocaleString();
-            div.classList.add('feed-block');
-            div.appendChild(img);
-            div.appendChild(p);
-            div.appendChild(span);
-            document.querySelector('.feed').appendChild(div);
+            fetch('https://api.penelo.me/v1/announcement/get', {
+              method: 'get',
+              headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+              }
+            }).then(response => response.json())
+              .then(function(response) {
+                if (response.length > 0) {
+                  for (i = 0; i < response.length; i++) {
+                    let img = document.createElement('img');
+                    let p = document.createElement('p');
+                    let span = document.createElement('span');
+                    let div = document.createElement('div');
+                    img.src = "/logo64.png";
+                    p.innerHTML = response[i].content;
+                    let timestamp = new Date(response[i].timeStamp + 'Z');
+                    span.innerHTML = timestamp.toLocaleString();
+                    div.classList.add('feed-block');
+                    div.appendChild(img);
+                    div.appendChild(p);
+                    div.appendChild(span);
+                    document.querySelector('.feed').appendChild(div);
+                  }
+                }
+              });
         });
       }
       function shrink() {
         document.getElementById("full-overlay").style.borderRadius="15px";
         document.getElementById("full-overlay").style.width="0px";
         document.getElementById("full-overlay").style.height="0px";
+      }
+      function askNotificationPermission() {
+        function handlePermission(permission) {
+          if(!('permission' in Notification)) {
+            Notification.permission = permission;
+          }
+
+          if(Notification.permission === 'denied' || Notification.permission === 'default') {
+            console.log('Permission was ' + Notification.permission);
+          } else {
+              fetch('https://api.penelo.me/v1/notification/get', {
+                method: 'get',
+                headers: {
+                  'Authorization': 'Bearer ' + localStorage.getItem('token')
+                }
+              }).then(response => response.json())
+                .then(function(response) {
+                  if (response.length > 0) {
+                    console.log("Notifications coming soon!")
+                    //sendNotification(response[0].title, response[0].body);
+                  }
+              });
+            }
+        }
+
+        if (!('Notification' in window)) {
+          console.log("This browser does not support notifications.");
+        } else {
+          if(checkNotificationPromise()) {
+            Notification.requestPermission()
+            .then((permission) => {
+              handlePermission(permission);
+            })
+          } else {
+            Notification.requestPermission(function(permission) {
+              handlePermission(permission);
+            });
+          }
+        }
+      }
+
+      function checkNotificationPromise() {
+        try {
+          Notification.requestPermission().then();
+        } catch(e) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function sendNotification(title, body) {
+        let icon = '/logo560-rc.png';
+        let notification = new Notification(title, { body: body, icon: icon });
       }
     </script>
   </body>
