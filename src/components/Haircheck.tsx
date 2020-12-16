@@ -52,7 +52,7 @@ const Header = styled.div({
   textAlign: 'center',
   fontSize: '30px',
   fontWeight: 'bolder',
-  color: '#00A6A6',
+  color: '#007bff',
   [mq.MOBILE]: {
     fontSize: '22px'
   }
@@ -82,12 +82,12 @@ const Controls = styled.div`
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: #00A6A6;
+    color: #007bff;
     svg {
       font-size: 20px;
       vertical-align: bottom;
       margin-right: 5px;
-      fill: #00A6A6;
+      fill: #007bff;
     }
   }
 `;

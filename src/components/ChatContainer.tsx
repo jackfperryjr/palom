@@ -216,7 +216,7 @@ interface ChatMessageGroupProps {
 
 const ChatMessageGroup: React.SFC<ChatMessageGroupProps> = ({ chats, peer }) => (
   <Message className="msg" key={chats[0].id}>
-    <MessageAuthor style={ chats[0].displayName === localStorage.displayName ? {color:'#00A6A6'} : {color : '#F4845F'} }>{chats[0].displayName ? chats[0].displayName : 'Anonymous'}</MessageAuthor>
+    <MessageAuthor style={ chats[0].displayName === localStorage.displayName ? {color:'#007bff'} : {color : '#F4845F'} }>{chats[0].displayName ? chats[0].displayName : 'Anonymous'}</MessageAuthor>
     <MessageTime>{chats[0].time.toLocaleTimeString()}</MessageTime>
     {chats.map(message => (
       <MessageText key={message.id}>

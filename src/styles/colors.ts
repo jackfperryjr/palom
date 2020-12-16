@@ -51,7 +51,7 @@ const colors = {
 
   ghostWhite: colorFromHex('#ffffff'),
 
-  lightSeaGreen: colorFromHex('#00A6A6'), 
+  lightSeaGreen: colorFromHex('#007bff'), 
   atomicTangerine: colorFromHex('#F79D65'), 
   coral: colorFromHex('#F4845F'), 
   bittersweet: colorFromHex('#F27059'), 

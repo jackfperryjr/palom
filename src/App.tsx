@@ -17,10 +17,10 @@ const Container = styled.div`
   }
   ${mq.MOBILE} {
     height: 100vh;
-    color: #eeeeee;
+    color: #0c0c0c;
   }
   ${mq.SMALL_DESKTOP} {
-    color: #eeeeee; 
+    color: #0c0c0c; 
   }
 `;
 
@@ -43,14 +43,14 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     margin: 0;
     padding: 0;
-    background-color: #0c0c0c;
+    background-color: #ffffff;
   }
 
   ${mq.MOBILE} {
     body, html {
       margin: 0;
       padding: 0;
-      background-color: #0c0c0c;
+      background-color: #ffffff;
     }
   }
 

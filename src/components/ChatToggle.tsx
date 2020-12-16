@@ -28,7 +28,7 @@ const Container = styled.button<ContainerProps>`
       ? css`1px ${colorToString(theme.buttonAttentionBackground)} solid`
       : css`none`};
   background: ${({ newMessage, theme }) =>
-    newMessage ? colorToString(theme.buttonAttentionBackground) : '#00A6A6'};
+    newMessage ? colorToString(theme.buttonAttentionBackground) : '#007bff'};
   color: ${({ newMessage, theme }) =>
     newMessage ? colorToString(theme.buttonAttentionText) : "#ffffff"};
   :focus {
