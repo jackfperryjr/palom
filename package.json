@@ -51,7 +51,7 @@
   },
   "private": true,
   "scripts": {
-    "deploy": "gh-pages -d dist",
+    "deploy": "node scripts/deploy.js",
     "build": "webpack --mode production",
     "eject": "react-scripts eject",
     "fix-lint": "tslint --fix --project .",
