@@ -454,9 +454,6 @@
     </style>
   <script type="text/javascript" src="bundle.min.js"></script></head>
   <body onload="getReady()">
-    <!-- <div id="full-overlay">
-      <img id="full-overlay-img" src="/apple-touch-icon.png" alt="Penelo logo"/>
-    </div> -->
     <div id="root"></div>
     <template id="haircheck-header">
     </template>
@@ -559,6 +556,10 @@
                 div.appendChild(img);
                 div.appendChild(p);
                 div.appendChild(span);
+                let reactions = document.createElement('div');
+                reactions.classList.add('reactions');
+                reactions.innerHTML = "<span id='like' onclick='handleReactionNotPersisted(this.id)'><i class='far fa-thumbs-up'></i><span class='small feed-reaction-count'>0</span></span><span id='dislike' onclick='handleReactionNotPersisted(this.id)'><i class='far fa-thumbs-down'></i><span class='small feed-reaction-count'>0</span></span><span id='love' onclick='handleReactionNotPersisted(this.id)'><i class='far fa-heart'></i><span class='small feed-reaction-count'>0</span></span>";
+                div.append(reactions);
                 document.querySelector('.feed').appendChild(div);
             }
         });
@@ -691,6 +692,13 @@
           .then(function(response) {
           document.getElementById(thisId).getElementsByClassName('feed-reaction-count')[0].innerHTML = response;
         })
+      }
+
+      function handleReactionNotPersisted(thisId) {
+        debugger
+        let prev = +document.getElementById(thisId).getElementsByClassName('feed-reaction-count')[0].innerHTML;
+        let next = ++prev;
+        document.getElementById(thisId).getElementsByClassName('feed-reaction-count')[0].innerHTML = next;
       }
 
     </script>
