@@ -1,0 +1,205 @@
+{
+    "short_name": "Penelo",
+    "name": "Penelo",
+    "description": "Welcome to Penelo! Penelo is a simple, easy to use, free video chat app. Penelo is built using React.js and incorporates PWA technologies! Try it out!",
+    "start_url": "./",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "icons": [
+      {
+        "src": "iOS/icon_1024@1x.png",
+        "type": "image/png",
+        "sizes": "1024x1024",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_512@2x.png",
+        "type": "image/png",
+        "sizes": "1024x1024",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_512@1x.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_256@2x.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_256@1x.png",
+        "type": "image/png",
+        "sizes": "256x256",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_128@2x.png",
+        "type": "image/png",
+        "sizes": "256x256",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_128@1x.png",
+        "type": "image/png",
+        "sizes": "128x128",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_83.5@2x.png",
+        "type": "image/png",
+        "sizes": "167x167",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_76@2x.png",
+        "type": "image/png",
+        "sizes": "152x152",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_76@1x.png",
+        "type": "image/png",
+        "sizes": "76x76",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_60@3x.png",
+        "type": "image/png",
+        "sizes": "180x180",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_60@2x.png",
+        "type": "image/png",
+        "sizes": "120x120",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_60@1x.png",
+        "type": "image/png",
+        "sizes": "167x167",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_40@3x.png",
+        "type": "image/png",
+        "sizes": "120x120",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_40@2x.png",
+        "type": "image/png",
+        "sizes": "80x80",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_40@1x.png",
+        "type": "image/png",
+        "sizes": "40x40",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_32@2x.png",
+        "type": "image/png",
+        "sizes": "64x64",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_32@1x.png",
+        "type": "image/png",
+        "sizes": "32x32",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_29@3x.png",
+        "type": "image/png",
+        "sizes": "87x87",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_29@2x.png",
+        "type": "image/png",
+        "sizes": "58x58",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_29@1x.png",
+        "type": "image/png",
+        "sizes": "29x29",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_20@3x.png",
+        "type": "image/png",
+        "sizes": "60x60",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_20@2x.png",
+        "type": "image/png",
+        "sizes": "40x40",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "iOS/icon_20@1x.png",
+        "type": "image/png",
+        "sizes": "20x20",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_16@2x.png",
+        "type": "image/png",
+        "sizes": "32x32",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "macOS/icon_16@1x.png",
+        "type": "image/png",
+        "sizes": "16x16",
+        "purpose": "any maskable"
+      }
+    ],
+    "screenshots": [
+      {
+        "src": "screen1.jpg"
+      },
+      {
+        "src": "screen2.png"
+      },
+      {
+        "src": "screen3.png"
+      },
+      {
+        "src": "screen4.png"
+      },
+      {
+        "src": "screen5.png"
+      },
+      {
+        "src": "screen6.jpg"
+      },
+      {
+        "src": "screen7.jpg"
+      },
+      {
+        "src": "screen8.jpg"
+      }
+    ],
+    "features": [
+      "Cross platform",
+      "Easy to use",
+      "No signups",
+      "Free"
+    ],
+    "categories": [
+      "utility"
+    ]
+  }
+  
