@@ -18,7 +18,6 @@ jobs:
         node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v2
     - name: Install
       uses: actions/setup-node@v1
       with:
