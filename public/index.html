@@ -560,7 +560,7 @@
                 let reactions = document.createElement('div');
                 reactions.classList.add('reactions');
                 reactions.innerHTML = "<span id='like' onclick='handleReactionNotPersisted(this.id)'><i class='far fa-thumbs-up'></i><span class='small feed-reaction-count'>0</span></span><span id='dislike' onclick='handleReactionNotPersisted(this.id)'><i class='far fa-thumbs-down'></i><span class='small feed-reaction-count'>0</span></span><span id='love' onclick='handleReactionNotPersisted(this.id)'><i class='far fa-heart'></i><span class='small feed-reaction-count'>0</span></span>";
-                div.append(reactions);
+                div.append(reactions); 
                 document.querySelector('.feed').appendChild(div);
             }
         });
