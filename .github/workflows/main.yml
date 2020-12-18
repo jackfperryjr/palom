@@ -31,5 +31,5 @@ jobs:
       git config user.name "jackfperryjr" && git config user.email "jackfperryjr@gmail.com"
       npm run deploy
 
-      env:
+    - env:
         CI: true
